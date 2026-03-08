@@ -349,7 +349,7 @@ function updateAnalyzer() {
     
     let evolutionText = "";
     if(ennea) {
-        evolutionText = `當你身心健康時，你不仅能展現出「${mbtiHealth[mbti].high}」的完美特質，更會朝向 ${enneaDB[ennea].growth}型 演化，${enneaDB[ennea].growthDesc}；但若落入極度壓力，你可能會退化成「${mbtiHealth[mbti].low}」，並解離至 ${enneaDB[ennea].stress}型，${enneaDB[ennea].stressDesc}。`;
+        evolutionText = `當你身心健康時，你不僅能展現出「${mbtiHealth[mbti].high}」的完美特質，更會朝向 ${enneaDB[ennea].growth}型 演化，${enneaDB[ennea].growthDesc}；但若落入極度壓力，你可能會退化成「${mbtiHealth[mbti].low}」，並解離至 ${enneaDB[ennea].stress}型，${enneaDB[ennea].stressDesc}。`;
     } else {
         evolutionText = `當你身心健康時，你能展現出「${mbtiHealth[mbti].high}」的完美特質；但若落入極度壓力與低階狀態，你可能會淪為「${mbtiHealth[mbti].low}」。`;
     }
@@ -363,12 +363,24 @@ function updateAnalyzer() {
 const hexToRgba = (hex, alpha) => { const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16); return `rgba(${r}, ${g}, ${b}, ${alpha})`; };
 const radarOptions = { responsive: true, maintainAspectRatio: false, scales: { r: { beginAtZero: true, min: 0, max: 150, ticks: { display: false, stepSize: 30 }, pointLabels: { font: { size: 12, weight: 'bold' } } } } };
 const radarLabels = ['Te','Ti','Fe','Fi','Se','Si','Ne','Ni'];
+const scoreKeys = ['Te', 'Ti', 'Fe', 'Fi', 'Se', 'Si', 'Ne', 'Ni'];
+const defaultScore = 100;
 
 const mbtiData = { 'ENTJ': [135, 90, 75, 80, 95, 70, 100, 120], 'INTJ': [120, 90, 70, 95, 75, 80, 100, 135], 'ENTP': [95, 120, 85, 75, 90, 70, 135, 100], 'INTP': [90, 135, 75, 85, 70, 95, 120, 100], 'ENFJ': [85, 75, 135, 100, 95, 70, 90, 120], 'INFJ': [75, 95, 120, 100, 70, 80, 90, 135], 'ENFP': [95, 75, 90, 120, 85, 70, 135, 100], 'INFP': [75, 80, 90, 135, 70, 95, 120, 100], 'ESTJ': [135, 95, 80, 70, 90, 120, 100, 75], 'ISTJ': [120, 90, 75, 95, 80, 135, 70, 100], 'ESFJ': [80, 70, 135, 95, 90, 120, 100, 75], 'ISFJ': [75, 90, 120, 95, 80, 135, 70, 100], 'ESTP': [95, 120, 85, 70, 135, 80, 100, 75], 'ISTP': [90, 135, 70, 80, 120, 95, 75, 100], 'ESFP': [95, 75, 90, 120, 135, 80, 100, 75], 'ISFP': [75, 80, 90, 135, 120, 95, 75, 100] };
 const colors16 = ['#ef4444', '#f97316', '#eab308', '#84cc16', '#10b981', '#14b8a6', '#06b6d4', '#0ea5e9', '#6366f1', '#8b5cf6', '#a855f7', '#d946ef', '#ec4899', '#f43f5e', '#94a3b8', '#64748b'];
 
 // 雙人雷達圖繪製函數
 window.myCustomChart = null;
+
+function clearInputs(userPrefix) {
+    scoreKeys.forEach((key) => {
+        const el = document.getElementById(`${userPrefix}${key}`);
+        if (el) el.value = defaultScore;
+    });
+
+    drawCustomRadar();
+    saveUserData();
+}
 
 function drawCustomRadar() {
     // saveUserData(); // Removed: Drawing shouldn't trigger saving to avoid overwriting data on init

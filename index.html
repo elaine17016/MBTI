@@ -171,15 +171,16 @@
                         </div>
                        
                         <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-2">
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="aTe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="80"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="aTi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="70"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="aFe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="60"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="aFi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="90"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="aSe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="50"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="aSi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="40"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="aNe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="85"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="aNi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="75"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="aTe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="aTi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="aFe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="aFi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="aSe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="aSi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="aNe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="aNi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="100"></div>
                         </div>
+                        <p class="text-xs text-slate-500 mt-2">備註：預設 100，可以手動修改。</p>
                     </div>
                     
                     <!-- 中間輸入區 (User B) -->
@@ -189,15 +190,16 @@
                              <button class="text-xs text-blue-400 hover:text-blue-600 underline" onclick="clearInputs('b')">清空</button>
                         </div>
                         <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-2">
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="bTe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="60"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="bTi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="85"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="bFe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="75"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="bFi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="50"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="bSe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="80"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="bSi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="65"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="bNe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="60"></div>
-                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="bNi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="70"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="bTe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="bTi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="bFe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="bFi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="bSe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="bSi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="bNe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="bNi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="100"></div>
                         </div>
+                        <p class="text-xs text-slate-500 mt-2">備註：預設 100，可以手動修改。</p>
                     </div>
 
                     <!-- 右側圖表區 -->
@@ -281,17 +283,6 @@
                     <!-- 動態生成的內容區塊 (分析器) -->
                     <div id="analysisContainer" class="hidden space-y-12 animate-fade-in-up">
                         
-                        <!-- 🔥 終極個人化專屬報告 -->
-                        <div class="bg-gradient-to-br from-indigo-900/90 via-slate-800 to-rose-900/90 p-8 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden">
-                            <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl">✨</div>
-                            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-6 border-b border-white/20 pb-4 flex items-center">
-                                <span class="mr-3">📜</span> 你的終極專屬性格診斷書
-                            </h3>
-                            <div id="ultimateReport" class="text-slate-200 text-lg leading-relaxed space-y-5 font-medium tracking-wide">
-                                <!-- Report generated via JS -->
-                            </div>
-                        </div>
-
                         <!-- 核心頭像與高低階屬性 -->
                         <div class="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-lg">
                             <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -396,6 +387,17 @@
                                     <h4 class="text-lg font-bold text-red-400 mb-2" id="guideDemTitle"></h4>
                                     <div class="text-slate-200 text-sm leading-relaxed" id="guideDemText"></div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- 🔥 終極個人化專屬報告 -->
+                        <div class="bg-gradient-to-br from-indigo-900/90 via-slate-800 to-rose-900/90 p-8 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl">✨</div>
+                            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-6 border-b border-white/20 pb-4 flex items-center">
+                                <span class="mr-3">📜</span> 你的終極專屬性格診斷書
+                            </h3>
+                            <div id="ultimateReport" class="text-slate-200 text-lg leading-relaxed space-y-5 font-medium tracking-wide">
+                                <!-- Report generated via JS -->
                             </div>
                         </div>
                         
@@ -606,18 +608,18 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5 text-sm">
                             <div class="bg-rose-500/10 border border-rose-400/30 rounded-xl p-3">
-                                <p class="font-bold text-rose-300 mb-1">解離向 (壓力，順著箭頭)</p>
-                                <p class="text-slate-200">1→4, 2→8, 3→9, 4→2, 5→7, 6→3, 7→1, 8→5, 9→6</p>
+                                <p class="font-bold text-rose-300 mb-1">解離向 (壓力應對人格轉換)</p>
+                                <p class="text-slate-200">1→4→2→8→5→7→1（另一路徑：9→6→3→9）</p>
                             </div>
                             <div class="bg-amber-500/10 border border-amber-400/30 rounded-xl p-3">
-                                <p class="font-bold text-amber-300 mb-1">整合向 (成長，逆著箭頭)</p>
-                                <p class="text-slate-200">1→7, 2→4, 3→6, 4→1, 5→8, 6→9, 7→5, 8→2, 9→3</p>
+                                <p class="font-bold text-amber-300 mb-1">整合向 (成長人格轉換)</p>
+                                <p class="text-slate-200">1→7→5→8→2→4→1（另一路徑：9→3→6→9）</p>
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-6 space-y-2">
-                        <p class="text-slate-300 text-sm">👉 圖中箭頭方向 代表「壓力解離 (退步)」的順序。</p>
-                        <p class="text-slate-300 text-sm">🔄 逆著箭頭走，即為「整合演化 (成長)」的路徑。</p>
+                        <p class="text-slate-300 text-sm">👉 解離路徑可讀作：1→4→2→8→5→7→1，以及 9→6→3→9。</p>
+                        <p class="text-slate-300 text-sm">🔄 整合路徑為反向位移，例如：1→7、9→3。</p>
                     </div>
                 </div>
 
@@ -655,12 +657,12 @@
                     <h3 class="text-2xl font-extrabold text-slate-800 mb-3 flex items-center"><span class="text-3xl mr-3">🔄</span>動態位移：整合與解離的原理</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-rose-50 p-6 rounded-2xl border border-rose-200">
-                            <h4 class="font-extrabold text-rose-700 mb-4 text-lg flex items-center"><span class="mr-2">⚠️</span>解離向 / 壓力路徑 (順著箭頭)</h4>
-                            <p class="text-slate-700 leading-relaxed">當你面臨極度壓力、原有的防禦機制崩潰耗盡時，大腦為了生存，會無意識地「借用」箭頭指向型號的負面/低階特質來發洩。例如：平時溫和的 9 號，壓力大時會變成焦慮多疑的 6 號。</p>
+                            <h4 class="font-extrabold text-rose-700 mb-4 text-lg flex items-center"><span class="mr-2">⚠️</span>解離向 / 壓力應對人格轉換</h4>
+                            <p class="text-slate-700 leading-relaxed">當你面臨極度壓力、原有的防禦機制崩潰耗盡時，大腦為了生存，會無意識地「借用」解離路徑上的負面/低階特質來發洩。例如：平時溫和的 9 號，壓力大時會變成焦慮多疑的 6 號。</p>
                         </div>
                         <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200">
-                            <h4 class="font-extrabold text-emerald-700 mb-4 text-lg flex items-center"><span class="mr-2">🌱</span>整合向 / 成長路徑 (逆著箭頭)</h4>
-                            <p class="text-slate-700 leading-relaxed">當你身心極度安全、放下恐懼與執念時，你會自然長出箭頭反方向型號的正面/高階特質。例如：挑剔嚴格的 1 號放鬆後，會展現出 7 號的隨性與快樂。</p>
+                            <h4 class="font-extrabold text-emerald-700 mb-4 text-lg flex items-center"><span class="mr-2">🌱</span>整合向 / 成長人格轉換</h4>
+                            <p class="text-slate-700 leading-relaxed">當你身心極度安全、放下恐懼與執念時，你會自然長出整合路徑上的正面/高階特質。例如：挑剔嚴格的 1 號放鬆後，會展現出 7 號的隨性與快樂。</p>
                         </div>
                     </div>
                 </div>
@@ -828,54 +830,41 @@
                     </div>
                 </div>
 
-                <!-- 薪資指數 -->
+                <!-- 16 型完整統計 -->
                 <div class="mb-10">
-                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="text-2xl mr-2">💰</span>薪資發展指數</h3>
-                    <p class="text-slate-500 text-sm mb-4">以下為學術研究中統計的各型號相對職涯薪資發展指數（以平均值 = 100 為基準）：</p>
-                    <div class="h-64 w-full"><canvas id="salaryBarChart2" class="hidden"></canvas>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-rose-600">ENTJ</div><div class="text-xs text-slate-500 mt-1">指數 145</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-rose-500 h-2 rounded-full" style="width:97%"></div></div></div>
-                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-rose-500">ESTJ</div><div class="text-xs text-slate-500 mt-1">指數 138</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-rose-400 h-2 rounded-full" style="width:92%"></div></div></div>
-                        <div class="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-indigo-600">ENTP</div><div class="text-xs text-slate-500 mt-1">指數 125</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:83%"></div></div></div>
-                        <div class="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-indigo-500">INTJ</div><div class="text-xs text-slate-500 mt-1">指數 122</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-indigo-400 h-2 rounded-full" style="width:81%"></div></div></div>
-                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-slate-500">ESTP</div><div class="text-xs text-slate-500 mt-1">指數 118</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-slate-400 h-2 rounded-full" style="width:79%"></div></div></div>
-                        <div class="bg-white border-2 border-slate-300 p-3 rounded-xl text-center"><div class="text-2xl font-black text-slate-400">平均</div><div class="text-xs text-slate-500 mt-1">指數 100</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-slate-300 h-2 rounded-full" style="width:67%"></div></div></div>
-                        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-center col-span-2"><div class="text-2xl font-black text-emerald-500">INFP</div><div class="text-xs text-slate-500 mt-1">指數 85（重視使命感勝過薪資）</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-emerald-400 h-2 rounded-full" style="width:57%"></div></div></div>
-                    </div></div>
-                </div>
-
-                <!-- 性別比例 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><span class="text-2xl mr-2">🚻</span>性別比例極端值</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <h4 class="font-bold text-blue-700 mb-4 flex items-center text-lg"><span class="mr-2">👨</span>男性分佈</h4>
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center p-4 bg-blue-50 rounded-xl border border-blue-100 shadow-sm">
-                                    <span class="text-slate-700">男性最高：<strong class="text-blue-700">ISTJ</strong></span>
-                                    <span class="font-black text-blue-700 text-xl">16.4%</span>
-                                </div>
-                                <div class="flex justify-between items-center p-4 bg-blue-50 rounded-xl border border-blue-100 shadow-sm">
-                                    <span class="text-slate-700">男性稀有：<strong class="text-blue-400">INFJ</strong></span>
-                                    <span class="font-black text-blue-400 text-xl">1.2%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-rose-700 mb-4 flex items-center text-lg"><span class="mr-2">👩</span>女性分佈</h4>
-                            <div class="space-y-3">
-                                <div class="flex justify-between items-center p-4 bg-rose-50 rounded-xl border border-rose-100 shadow-sm">
-                                    <span class="text-slate-700">女性最高：<strong class="text-rose-700">ISFJ</strong></span>
-                                    <span class="font-black text-rose-700 text-xl">19.4%</span>
-                                </div>
-                                <div class="flex justify-between items-center p-4 bg-rose-50 rounded-xl border border-rose-100 shadow-sm">
-                                    <span class="text-slate-700">女性稀有：<strong class="text-rose-400">INTJ</strong></span>
-                                    <span class="font-black text-rose-400 text-xl">0.8%</span>
-                                </div>
-                            </div>
-                        </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="text-2xl mr-2">💹</span>16 型人格完整統計：薪資指數 / 人口占比 / 男女占比</h3>
+                    <p class="text-slate-500 text-sm mb-4">說明：薪資指數以平均值 = 100 為基準。人口與性別比例為多份公開樣本的整合示意，會因國家、年齡與樣本來源而浮動。</p>
+                    <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800 text-white">
+                                    <th class="p-4 text-left font-bold">MBTI 類型</th>
+                                    <th class="p-4 text-left font-bold">薪資指數</th>
+                                    <th class="p-4 text-left font-bold">人口占比</th>
+                                    <th class="p-4 text-left font-bold">男性占比</th>
+                                    <th class="p-4 text-left font-bold">女性占比</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ENTJ</td><td class="p-4 font-bold text-rose-600">145</td><td class="p-4">1.8%</td><td class="p-4">67%</td><td class="p-4">33%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">INTJ</td><td class="p-4 font-bold text-indigo-600">132</td><td class="p-4">2.1%</td><td class="p-4">72%</td><td class="p-4">28%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ENTP</td><td class="p-4 font-bold text-indigo-600">128</td><td class="p-4">3.2%</td><td class="p-4">61%</td><td class="p-4">39%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">INTP</td><td class="p-4 font-bold text-indigo-600">123</td><td class="p-4">3.3%</td><td class="p-4">69%</td><td class="p-4">31%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ESTJ</td><td class="p-4 font-bold text-rose-600">138</td><td class="p-4">8.7%</td><td class="p-4">57%</td><td class="p-4">43%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ISTJ</td><td class="p-4 font-bold text-blue-600">130</td><td class="p-4">11.6%</td><td class="p-4">61%</td><td class="p-4">39%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ENFJ</td><td class="p-4 font-bold text-emerald-600">115</td><td class="p-4">2.5%</td><td class="p-4">39%</td><td class="p-4">61%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">INFJ</td><td class="p-4 font-bold text-emerald-600">112</td><td class="p-4">1.5%</td><td class="p-4">25%</td><td class="p-4">75%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ESFJ</td><td class="p-4 font-bold text-blue-600">109</td><td class="p-4">12.3%</td><td class="p-4">36%</td><td class="p-4">64%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ENFP</td><td class="p-4 font-bold text-emerald-600">108</td><td class="p-4">8.1%</td><td class="p-4">41%</td><td class="p-4">59%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ISFJ</td><td class="p-4 font-bold text-blue-600">106</td><td class="p-4">13.8%</td><td class="p-4">29%</td><td class="p-4">71%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ESTP</td><td class="p-4 font-bold text-amber-600">118</td><td class="p-4">4.3%</td><td class="p-4">69%</td><td class="p-4">31%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ISTP</td><td class="p-4 font-bold text-amber-600">114</td><td class="p-4">5.4%</td><td class="p-4">77%</td><td class="p-4">23%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ESFP</td><td class="p-4 font-bold text-amber-600">102</td><td class="p-4">8.5%</td><td class="p-4">34%</td><td class="p-4">66%</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">ISFP</td><td class="p-4 font-bold text-amber-600">98</td><td class="p-4">8.8%</td><td class="p-4">30%</td><td class="p-4">70%</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">INFP</td><td class="p-4 font-bold text-emerald-600">96</td><td class="p-4">4.4%</td><td class="p-4">35%</td><td class="p-4">65%</td></tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <p class="text-slate-500 text-sm mt-6 bg-white p-4 rounded-xl border border-slate-100 leading-relaxed">※ 數據顯示：邏輯(T)型在男性中佔全球約 60%，而情感(F)型在女性中佔比高達 75%。這解釋了為何 T女 與 F男 經常在社會傳統期待中感到格格不入。</p>
                 </div>
             </div>
         </section>
