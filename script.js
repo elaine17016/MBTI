@@ -101,6 +101,17 @@ const funcKeywords = {
     'Fi': '核心價值 • 個人信仰 • 道德底線 • 真實自我 • 深層共情'
 };
 
+const funcArchetypeKeywords = {
+    'Ne': '無限可能的探索與創意發散',
+    'Ni': '收斂未來的洞見與預知力',
+    'Se': '活在當下的極致感官體驗',
+    'Si': '守護過去經驗與穩定秩序',
+    'Te': '追求客觀效率與資源調度',
+    'Ti': '建構內部邏輯與獨立思考',
+    'Fe': '維護群體和諧與世俗價值',
+    'Fi': '堅守核心信念與真誠感受'
+};
+
 const relationsDB = {
     'ENTP': { dual: 'INFJ', mirror: 'INTP', conflict: 'ISFP' }, 'INTP': { dual: 'ENFJ', mirror: 'ENTP', conflict: 'ESFP' },
     'ENTJ': { dual: 'INFP', mirror: 'INTJ', conflict: 'ISFJ' }, 'INTJ': { dual: 'ENFP', mirror: 'ENTJ', conflict: 'ESFJ' },
@@ -294,6 +305,13 @@ function updateAnalyzer() {
 
     const funcs = functionsStack[mbti];
     const fullStack = [funcs[0], funcs[1], funcs[2], funcs[3], funcs[0][0]+(funcs[0][1]=='e'?'i':'e'), funcs[1][0]+(funcs[1][1]=='e'?'i':'e'), funcs[2][0]+(funcs[2][1]=='e'?'i':'e'), funcs[3][0]+(funcs[3][1]=='e'?'i':'e')];
+
+    // Update Archetypes Table (John Beebe)
+    for(let i=1; i<=8; i++) {
+        const f = fullStack[i-1];
+        const el = document.getElementById(`arch-${i}-func`);
+        if(el) el.innerHTML = `<span class="font-black text-lg mr-2">${f}</span> ${funcArchetypeKeywords[f]}`;
+    }
 
     // 動態深度分析 1-3位
     document.getElementById('descHero').innerHTML = `<strong>${funcNames[funcs[0]]} (${funcs[0]})</strong> 作為你的核心引擎，就像是呼吸一樣自然。${deepFuncDesc[funcs[0]]}`;
