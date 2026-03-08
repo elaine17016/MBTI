@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elaine17016.github.io/MBTI/sitemap.xml
