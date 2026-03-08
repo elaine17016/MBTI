@@ -59,6 +59,13 @@ const mbtiHealth = {
     'ISFJ': { high: '默默付出、堅定溫柔的保護者，是所有人的避風港，且能勇敢表達需求', low: '充滿怨氣的殉道者，一邊委屈付出卻又一邊用翻舊帳來折磨親近的人' }
 };
 
+const fourSidesDesc = {
+    Ego: { title: '1. 顯意識 (Ego)', tag: '顯意識 ( 英雄/面具)', color: 'text-indigo-300', icon: '🎭', text: '你的日常生活狀態，也是你感知與應對世界的預設模式。這個面具是最讓你感到安全、自信且習慣的地方。' },
+    Subconscious: { title: '2. 潛意識 (Subconscious)', tag: '潛意識 ( 渴望/赤子)', color: 'text-emerald-300', icon: '👶', text: '四個字母完全相反。這是你內心渴望擁有、但平時可能笨拙的「快樂源泉」。當你不帶恐懼時，你會自然變成這個樣子，帶來純真的幸福感。' },
+    Unconscious: { title: '3. 無意識 (Unconscious)', tag: '無意識 ( 陰影/導師)', color: 'text-amber-300', icon: '🎓', text: 'E/I、J/P 相反。這是一體兩面的背影。當你面臨壓力或需解決複雜問題時，你會被迫召喚這個成熟卻痛苦的陰影，它是你通往個體化智慧的必經之路。' },
+    Superego: { title: '4. 超我 (Superego)', tag: '超我 ( 神明/毀滅)', color: 'text-rose-400', icon: '🔥', text: 'N/S、T/F 相反。這是與你完全陌生的異次元生物。平時這是你的「垃圾桶」，但當你人生遭遇極致毀滅時，若能將其整合，你將獲得如神一般的無畏與完整。' }
+};
+
 const functionsStack = {
     'ENTP': ['Ne', 'Ti', 'Fe', 'Si'], 'INTP': ['Ti', 'Ne', 'Si', 'Fe'],
     'ENTJ': ['Te', 'Ni', 'Se', 'Fi'], 'INTJ': ['Ni', 'Te', 'Fi', 'Se'],
@@ -316,6 +323,30 @@ function updateAnalyzer() {
 
     document.getElementById('loopTitle').innerText = `${funcs[0]}-${funcs[2]} Loop`; document.getElementById('loopDesc').innerText = stressDB[mbti].loop;
     document.getElementById('gripTitle').innerText = `${funcs[3]} Grip`; document.getElementById('gripDesc').innerText = stressDB[mbti].grip;
+
+    const sides = [
+        { type: 'Ego', mbti: mbti, desc: fourSidesDesc.Ego },
+        { type: 'Sub', mbti: sub, desc: fourSidesDesc.Subconscious },
+        { type: 'Unc', mbti: unc, desc: fourSidesDesc.Unconscious },
+        { type: 'Sup', mbti: sup, desc: fourSidesDesc.Superego }
+    ];
+    
+    const fsGrid = document.getElementById('fourSidesGrid');
+    if(fsGrid) {
+        fsGrid.innerHTML = '';
+        sides.forEach(s => {
+            fsGrid.innerHTML += `
+            <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700/50 hover:bg-slate-800/80 transition-all group">
+                <div class="flex items-center justify-between mb-3 border-b border-slate-700 pb-2">
+                    <span class="text-xs font-bold ${s.desc.color} uppercase tracking-wider">${s.desc.tag}</span>
+                    <span class="text-xl opacity-50 group-hover:opacity-100 transition-opacity">${s.desc.icon}</span>
+                </div>
+                <div class="text-3xl font-black text-white mb-1 tracking-tight">${s.mbti}</div>
+                <div class="text-[10px] text-slate-400 font-mono mb-3 uppercase tracking-widest">${typeInfo[s.mbti].name.split(' ')[1]}</div>
+                <p class="text-xs text-slate-300 leading-relaxed font-medium opacity-90">${s.desc.text}</p>
+            </div>`;
+        });
+    }
 
     // 完整八維排序表 (帶關鍵字的深色卡片)
     const grid = document.getElementById('eightFunctionsGrid'); grid.innerHTML = '';
