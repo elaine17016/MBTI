@@ -331,22 +331,6 @@
                                     <div class="text-emerald-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥉</span> 第 3 位：永恆少年 (Child)</div>
                                     <p class="text-sm text-slate-300 leading-relaxed mb-3"><strong>本質：</strong>它如左手般不靈活，偶爾會犯錯與笨拙，但也是你受傷時的避風港、玩樂放鬆的來源。</p>
                                     <p class="text-sm text-slate-300 leading-relaxed" id="descChild"></p>
-                                    <div class="mt-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 backdrop-blur-sm">
-                                        <details class="group">
-                                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-slate-300 hover:text-white transition-colors">
-                                                <span class="flex items-center"><span class="mr-2">💡</span> 關於性格變動與 -A/-T 子類型說明</span>
-                                                <span class="transition group-open:rotate-180">
-                                                    <svg fill="none" class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                                                </span>
-                                            </summary>
-                                            <div class="text-slate-400 mt-4 group-open:animate-fadeIn text-sm space-y-3 leading-relaxed border-t border-slate-700/50 pt-3">
-                                                <p><strong class="text-indigo-300">Assertive (-A) 堅決型：</strong> 情緒穩定，較有自信，較不在意他人看法。即使遇到壓力也能保持冷靜。</p>
-                                                <p><strong class="text-indigo-300">Turbulent (-T) 動盪型：</strong> 完美主義，情緒起伏大，容易焦慮但也更有上進心。經常自我反省並渴望變得更好。</p>
-                                                <hr class="border-slate-700/50 my-2">
-                                                <p><strong class="text-amber-300">性格會變嗎？</strong> 榮格認為核心性格類型（大腦原廠設定）通常不會改變。但隨著年齡增長與社會化，你會發展出原本不擅長的弱勢功能（例如老年的 <span class="font-mono text-xs bg-slate-700 px-1 rounded">Thinking (T)</span> 人會變得比較慈祥、感性），這稱為<strong>「人格整合 (Individuation)」</strong>。這不代表你的類型變了，而是你變得更完整了。</p>
-                                            </div>
-                                        </details>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -644,36 +628,74 @@
                                 <line x1="550" y1="430" x2="350" y2="90" stroke="#f43f5e" stroke-width="5" marker-end="url(#arrow-rose)"></line>
 
                                 <g fill="#334155" stroke="#ffffff" stroke-width="6">
-                                    <circle cx="350" cy="90" r="30"></circle>
-                                    <circle cx="500" cy="145" r="30"></circle>
-                                    <circle cx="580" cy="280" r="30"></circle>
-                                    <circle cx="550" cy="430" r="30"></circle>
-                                    <circle cx="430" cy="535" r="30"></circle>
-                                    <circle cx="270" cy="535" r="30"></circle>
-                                    <circle cx="150" cy="430" r="30"></circle>
-                                    <circle cx="120" cy="280" r="30"></circle>
-                                    <circle cx="200" cy="145" r="30"></circle>
+                                    <circle cx="350" cy="90" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="500" cy="145" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="580" cy="280" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="550" cy="430" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="430" cy="535" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="270" cy="535" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="150" cy="430" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="120" cy="280" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
+                                    <circle cx="200" cy="145" r="30" class="hover:fill-fuchsia-600 cursor-pointer transition-colors"></circle>
                                 </g>
 
-                                <g fill="#f8fafc" font-size="34" font-weight="800" text-anchor="middle" dominant-baseline="middle">
-                                    <text x="350" y="90">9</text>
-                                    <text x="500" y="145">1</text>
-                                    <text x="580" y="280">2</text>
-                                    <text x="550" y="430">3</text>
-                                    <text x="430" y="535">4</text>
-                                    <text x="270" y="535">5</text>
-                                    <text x="150" y="430">6</text>
-                                    <text x="120" y="280">7</text>
-                                    <text x="200" y="145">8</text>
+                                <g fill="#f8fafc" font-size="28" font-weight="900" text-anchor="middle" dominant-baseline="middle" style="pointer-events: none;">
+                                    <text x="350" y="93">9</text>
+                                    <text x="500" y="148">1</text>
+                                    <text x="580" y="283">2</text>
+                                    <text x="550" y="433">3</text>
+                                    <text x="430" y="538">4</text>
+                                    <text x="270" y="538">5</text>
+                                    <text x="150" y="433">6</text>
+                                    <text x="120" y="283">7</text>
+                                    <text x="200" y="148">8</text>
                                 </g>
 
-                                <g fill="#334155" font-size="34" font-weight="700">
-                                    <text x="350" y="56" text-anchor="middle">和平者</text>
-                                    <text x="548" y="126" text-anchor="start">完美主義</text>
-                                    <text x="625" y="305" text-anchor="start">給予者</text>
-                                    <text x="618" y="452" text-anchor="start">成就者</text>
-                                    <text x="466" y="611" text-anchor="start">浪漫主義</text>
-                                    <text x="270" y="611" text-anchor="middle">觀察者</text>
+                                <g fill="#475569" font-size="24" font-weight="700">
+                                    <text x="350" y="50" text-anchor="middle">和平者</text>
+                                    <text x="540" y="130" text-anchor="start">改革者</text>
+                                    <text x="620" y="290" text-anchor="start">助人者</text>
+                                    <text x="590" y="440" text-anchor="start">成就者</text>
+                                    <text x="430" y="580" text-anchor="start">浪漫者</text>
+                                    <text x="270" y="580" text-anchor="end">觀察者</text>
+                                    <text x="110" y="440" text-anchor="end">忠誠者</text>
+                                    <text x="80" y="290" text-anchor="end">活躍型</text>
+                                    <text x="160" y="130" text-anchor="end">挑戰者</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- 靈魂演化哲學解析 -->
+                    <div class="mt-10 max-w-4xl mx-auto space-y-6">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                            <h4 class="text-xl font-bold text-amber-300 mb-4 flex items-center"><span class="text-3xl mr-3">🌀</span>為何我們會「解離」與「整合」？</h4>
+                            <div class="space-y-4 text-slate-200 leading-relaxed text-sm md:text-base">
+                                <p>
+                                    <strong class="text-rose-400">🔻 當你解離 (Disintegration / Stress)：</strong><br>
+                                    這不是懲罰，而是靈魂的<strong>「緊急求生機制」</strong>。當你原本的性格策略（原罪）失效，無法應對巨大的生存焦慮時，你被迫切換到另一種人格狀態來保護自己。這通常是無意識的、痛苦的，但也讓你暫時獲得原本不具備的力量。
+                                </p>
+                                <p>
+                                    <strong class="text-emerald-400">🔺 當你整合 (Integration / Growth)：</strong><br>
+                                    這是靈魂的<strong>「主動擴張」</strong>。當你感到安全、被愛且覺知極高時，你不再被恐懼驅動，於是原本的防禦機制鬆動了。你開始能借用另一種人格的高階特質，來圓滿自己的缺點。這需要有意識的修煉。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="bg-indigo-900/40 backdrop-blur-sm p-6 rounded-2xl border border-indigo-500/30">
+                            <h4 class="text-xl font-bold text-indigo-300 mb-4 flex items-center"><span class="text-3xl mr-3">🌌</span>終點與核心哲學：成為一個「圓」</h4>
+                            <p class="text-slate-200 leading-relaxed text-sm md:text-base mb-4">
+                                九型人格的終極目標，並不是要你消除自己的號碼，而是意識到<strong>「你擁有九種力量」</strong>。
+                            </p>
+                            <p class="text-slate-200 leading-relaxed text-sm md:text-base italic bg-black/20 p-4 rounded-xl border-l-4 border-indigo-500">
+                                「只有當你能夠自由地在九個點之間流動，不再停滯於任何一個號碼的執著中時，你才完成了靈魂的旅程。你不再是某個碎片，你成為了一個完整的圓。」
+                            </p>
+                            <p class="text-right text-slate-400 text-xs mt-2">—— 葛吉夫 (G.I. Gurdjieff) / 蘇菲智慧</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1~9型全圖鑑 -->
                                     <text x="80" y="452" text-anchor="end">忠誠者</text>
                                     <text x="75" y="305" text-anchor="end">活躍型</text>
                                     <text x="150" y="126" text-anchor="end">挑戰者</text>
@@ -919,6 +941,7 @@
                                     <th class="p-4 text-left font-bold">核心原罪 (Passion)</th>
                                     <th class="p-4 text-left font-bold">最深層的恐懼</th>
                                     <th class="p-4 text-left font-bold">終極的慾望</th>
+                                    <th class="p-4 text-left font-bold">常見怪癖 (Quirks)</th>
                                     <th class="p-4 text-left font-bold">大腦防禦機制 (Defense Mechanism)</th>
                                 </tr>
                             </thead>
@@ -928,6 +951,7 @@
                                     <td class="p-4 font-semibold text-rose-700">憤怒<br><span class="text-xs font-normal text-slate-500">(Anger)</span></td>
                                     <td class="p-4 text-slate-600">敗壞、邪惡、有缺陷、做錯事</td>
                                     <td class="p-4 text-slate-600">善良、正直、保持平衡與正確</td>
+                                    <td class="p-4 text-slate-600 text-xs">糾正別人的文法錯字、強迫症般的整理癖、看不慣有人插隊、對細節過度挑剔</td>
                                     <td class="p-4 text-slate-700"><strong>反向形成</strong> (Reaction Formation)：將內心不被允許的衝動（如憤怒）壓抑，並表現出完全相反的道德與嚴厲。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
@@ -935,6 +959,7 @@
                                     <td class="p-4 font-semibold text-rose-700">驕傲<br><span class="text-xs font-normal text-slate-500">(Pride)</span></td>
                                     <td class="p-4 text-slate-600">不被愛、不被需要、毫無價值</td>
                                     <td class="p-4 text-slate-600">感受到被愛、被需要、成為不可或缺</td>
+                                    <td class="p-4 text-slate-600 text-xs">送你不想要的禮物、過度熱情的擁抱、你不求助他還硬要幫忙、對「被拒絕」極度敏感</td>
                                     <td class="p-4 text-slate-700"><strong>壓抑</strong> (Repression)：強行壓抑自己的需求與痛苦，催眠自己「我不需要幫助，都是別人在需要我」。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors">
@@ -942,6 +967,7 @@
                                     <td class="p-4 font-semibold text-rose-700">虛榮/欺騙<br><span class="text-xs font-normal text-slate-500">(Deceit)</span></td>
                                     <td class="p-4 text-slate-600">毫無價值、失敗、沒有成就</td>
                                     <td class="p-4 text-slate-600">感覺有價值、成功、受人景仰</td>
+                                    <td class="p-4 text-slate-600 text-xs">工作狂、講話像在做簡報、隨時檢查社群按讚數、為了贏可以不擇手段、有偶像包袱</td>
                                     <td class="p-4 text-slate-700"><strong>認同/偽裝</strong> (Identification)：為了符合世俗的成功標準，戴上面具，最終連自己都相信了這個偽裝的人設。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
@@ -949,6 +975,7 @@
                                     <td class="p-4 font-semibold text-rose-700">嫉妒<br><span class="text-xs font-normal text-slate-500">(Envy)</span></td>
                                     <td class="p-4 text-slate-600">平庸無奇、沒有自我、存在被忽視</td>
                                     <td class="p-4 text-slate-600">找到自我定位、證明自己的獨特性</td>
+                                    <td class="p-4 text-slate-600 text-xs">深夜聽傷感音樂自憐、穿著風格怪異、故意唱反調以示獨特、對「被理解」有不切實際的渴望</td>
                                     <td class="p-4 text-slate-700"><strong>內投作用</strong> (Introjection)：將外界的傷害內化為「是我自己有缺陷」，透過憂鬱來維持獨特的自我感。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors">
@@ -956,6 +983,7 @@
                                     <td class="p-4 font-semibold text-rose-700">貪婪<br><span class="text-xs font-normal text-slate-500">(Avarice)</span></td>
                                     <td class="p-4 text-slate-600">無知、無能、被外界吞噬與耗盡</td>
                                     <td class="p-4 text-slate-600">具備能力、知識、完全理解世界</td>
+                                    <td class="p-4 text-slate-600 text-xs">囤積知識或書籍、極度保護隱私、討厭突如其來的電話、在聚會中像隱形人、用專業術語築牆</td>
                                     <td class="p-4 text-slate-700"><strong>隔離</strong> (Isolation)：切斷思想與情感的連結。危機時關閉情緒，退回大腦中用冷冰冰的邏輯分析一切。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
@@ -963,6 +991,7 @@
                                     <td class="p-4 font-semibold text-rose-700">恐懼<br><span class="text-xs font-normal text-slate-500">(Fear)</span></td>
                                     <td class="p-4 text-slate-600">失去支持與指引、無法獨自生存</td>
                                     <td class="p-4 text-slate-600">獲得絕對的安全感與可靠的後盾</td>
+                                    <td class="p-4 text-slate-600 text-xs">囤積物資、災難預言家、對權威既依賴又懷疑、反覆確認門窗有沒有鎖、做決定前要問遍所有人意見</td>
                                     <td class="p-4 text-slate-700"><strong>投射</strong> (Projection)：將自己內在的不安與敵意，投射到外界事物上，覺得「外面充滿了危險與想害我的人」。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors">
@@ -970,6 +999,7 @@
                                     <td class="p-4 font-semibold text-rose-700">貪食<br><span class="text-xs font-normal text-slate-500">(Gluttony)</span></td>
                                     <td class="p-4 text-slate-600">被剝奪、陷入痛苦、失去自由</td>
                                     <td class="p-4 text-slate-600">保持快樂、獲得滿足與無盡的體驗</td>
+                                    <td class="p-4 text-slate-600 text-xs">同時開很多視窗卻不看完、計畫一堆旅遊行程、無法忍受無聊的會議、話題跳躍太快沒人跟得上</td>
                                     <td class="p-4 text-slate-700"><strong>合理化</strong> (Rationalization)：用看似正向、樂觀的理由來包裝自己的逃避行為，永遠將痛苦的現實美化。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
@@ -977,6 +1007,7 @@
                                     <td class="p-4 font-semibold text-rose-700">縱慾<br><span class="text-xs font-normal text-slate-500">(Lust)</span></td>
                                     <td class="p-4 text-slate-600">受到傷害、被他人控制或背叛</td>
                                     <td class="p-4 text-slate-600">保護自己、絕對掌控自己的命運</td>
+                                    <td class="p-4 text-slate-600 text-xs">說話嗓門大、喜歡發號施令、故意激怒別人來測試底線、對弱者有莫名的保護慾、吃軟不吃硬</td>
                                     <td class="p-4 text-slate-700"><strong>否認</strong> (Denial)：絕對拒絕承認自己的脆弱、恐懼或受傷，用強硬的憤怒與攻擊性來掩蓋一切弱點。</td>
                                 </tr>
                                 <tr class="hover:bg-rose-50/50 transition-colors">
@@ -984,6 +1015,7 @@
                                     <td class="p-4 font-semibold text-rose-700">怠惰<br><span class="text-xs font-normal text-slate-500">(Sloth)</span></td>
                                     <td class="p-4 text-slate-600">衝突、斷裂、失去與他人的聯繫</td>
                                     <td class="p-4 text-slate-600">維持內在平靜與外在和諧</td>
+                                    <td class="p-4 text-slate-600 text-xs">選擇困難症 (隨便都好)、看電視看到睡著、拖延症末期、假裝沒聽見衝突、囤積雜物覺得「也許以後有用」</td>
                                     <td class="p-4 text-slate-700"><strong>麻醉/麻木</strong> (Narcotization)：用微不足道的瑣事、成癮行為來麻痺自己，迴避真正需要解決的衝突。</td>
                                 </tr>
                             </tbody>
@@ -1114,6 +1146,32 @@
                         <p class="text-emerald-300 font-bold flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">✅</span>真相：這大多是多重因素造成的「假象」。首先是嚴重的「倖存者偏差」——INFP 本身就是最熱衷於心理探索與自我療愈的族群，網路論壇自然成了他們的舒適主場。其次，主流簡易測驗（如 16Personalities）容易將「豐富想像力」與「高敏感」特質直接歸類為 N 與 F，導致大量其他類型被誤判。最後，現實中的 INFP 往往善於偽裝合群，只有在網路世界的匿名保護下，才敢大規模展現真實且深邃的自我。</p>
                     </div>
                 </div>
+
+                <div class="mt-8 bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 group">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-indigo-300 hover:text-white transition-colors text-lg">
+                            <span class="flex items-center"><span class="mr-2">💡</span> 補充知識：什麼是 -A/-T 子類型？性格會變嗎？</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="text-slate-300 mt-4 group-open:animate-fadeIn text-sm space-y-4 leading-relaxed border-t border-white/10 pt-4">
+                            <div>
+                                <strong class="text-indigo-300 text-base block mb-1">Assertive (-A) 堅決型：</strong>
+                                <p>情緒穩定，較有自信，較不在意他人看法。即使遇到壓力也能保持冷靜，但有時可能顯得對變局反應不夠敏銳。</p>
+                            </div>
+                            <div>
+                                <strong class="text-indigo-300 text-base block mb-1">Turbulent (-T) 動盪型：</strong>
+                                <p>完美主義，情緒起伏大，容易焦慮但也更有上進心。經常自我反省並渴望變得更好，對細節與風險更為敏感。</p>
+                            </div>
+                            <hr class="border-white/10 my-2">
+                            <div>
+                                <strong class="text-amber-300 text-base block mb-1">性格會變嗎？</strong>
+                                <p>榮格認為核心性格類型（大腦原廠設定）通常不會改變。但隨著年齡增長與社會化，你會發展出原本不擅長的功能（例如老年的 <span class="font-mono text-xs bg-slate-700/50 px-1 rounded">Thinking (T)</span> 人會變得比較慈祥、感性），這稱為<strong>「人格整合 (Individuation)」</strong>。這不代表你的類型變了，而是你變得更完整了。</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
             </div>
         </section>
 
@@ -1145,7 +1203,7 @@
                 <h2 class="text-2xl font-extrabold text-slate-800 mb-4 text-center">📊 16型人格平均雷達圖常模總覽</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6" id="all16ChartsContainer"></div>
                 <div class="mt-8 h-64 w-full">
-                    <h3 class="text-center font-bold text-slate-700 mb-2">💰 相對薪資發展指數</h3>
+                    <h3 class="text-center font-bold text-slate-700 mb-2">💰 16 型人格收入排名 (平均年薪相對指數)</h3>
                     <canvas id="salaryBarChart"></canvas>
                 </div>
             </div>
