@@ -21,36 +21,7 @@
     *   John Beebe 的八維原型 (Hero, Parent, Child, Inferior...) 視覺化卡片。
     *   16 型常模縮圖總覽。
 
-## 🚀 如何發布到 GitHub Pages (How to Publish)
 
-本專案是一個純靜態網頁 (Pure HTML/CSS/JS)，非常適合透過 GitHub Pages 免費託管。
-
-### 步驟 1：初始化 Git
-如果你還沒有初始化 Git，請在專案資料夾內執行：
-```bash
-git init
-git add .
-git commit -m "Initial commit of Systematic MBTI Analyzer"
-```
-
-### 步驟 2：推送到 GitHub
-1. 在 [GitHub](https://github.com/new) 上建立一個新的 **Repository** (例如命名為 `mbti`)。
-2. 連結你的本地專案到遠端 (將 `<your-username>` 替換為你的帳號)：
-```bash
-git branch -M main
-git remote add origin https://github.com/<your-username>/mbti.git
-git push -u origin main
-```
-
-### 步驟 3：開啟 GitHub Pages
-1. 進入你的 GitHub Repository 頁面。
-2. 點擊上方選單的 **Settings** (設定)。
-3. 在左側欄找到 **Pages** (頁面)。
-4. 在 **Build and deployment** 下方的 **Branch** 選擇 `main`，資料夾選擇 `/(root)`。
-5. 點擊 **Save**。
-
-稍等約 1-2 分鐘，你的網站就會上線了！網址通常是：
-`https://<your-username>.github.io/mbti/`
 
 ## 🛠️ 技術棧 (Tech Stack)
 *   **HTML5** (Semantic Structure)
