@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="榮格八維 × 九型人格 × 本能副型 全息探索系統。從認知神經科學到靈魂深處，為自我覺察者打造的最全面人性解密兵器。提供雷達圖分析、壓力狀態解析與人格演化指南。">
+    <meta name="keywords" content="MBTI, 榮格八維, 九型人格, Enneagram, 認知功能, 心理測驗, 人格分析, 潛意識, 陰影, 心理學">
+    <meta name="author" content="Systematic MBTI Analyzer">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elain.github.io/mbti/">
+    <meta property="og:title" content="榮格八維 × 九型人格 全息探索指南 | 終極典藏版">
+    <meta property="og:description" content="深度解析你的大腦構造與靈魂渴望。整合 MBTI (認知)、九型 (恐懼) 與副型 (本能) 的三位一體系統。">
+    <meta property="og:image" content="https://raw.githubusercontent.com/elain/mbti/main/preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="榮格八維 × 九型人格 全息探索指南">
+    <meta property="twitter:description" content="深度解析你的大腦構造與靈魂渴望。">
+    
+    <title>榮格八維 × 九型人格 全息探索指南 | 終極典藏版</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="text-slate-800 p-0 selection:bg-indigo-200 selection:text-indigo-900 bg-slate-50">
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md text-white border-b border-slate-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="flex items-center hover:opacity-80 transition-opacity">
+                    <span class="text-2xl mr-2">🧠</span>
+                    <span class="font-bold text-lg hidden md:block tracking-wide">全息探索系統</span>
+                </a>
+                <div class="flex items-center space-x-1 md:space-x-2 overflow-x-auto">
+                    <a href="#radar-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-rose-400 transition-colors whitespace-nowrap">📊 雷達圖</a>
+                    <a href="#analyzer-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-emerald-400 transition-colors whitespace-nowrap">🔮 全息解析</a>
+                    <a href="#theory-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-amber-400 transition-colors whitespace-nowrap">🏛️ 八維</a>
+                    <a href="#enneagram-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-amber-400 transition-colors whitespace-nowrap hidden md:inline-block">🌟 九型</a>
+                    <a href="#variant-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-emerald-400 transition-colors whitespace-nowrap hidden md:inline-block">🧬 副型</a>
+                    <a href="#myths-section" class="px-2 md:px-3 py-2 rounded-md text-xs md:text-sm font-medium hover:bg-slate-800 hover:text-indigo-400 transition-colors whitespace-nowrap hidden lg:inline-block">💡 迷思</a>
+                    <button onclick="toggleGuide()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-lg hover:shadow-indigo-500/50 ml-1 md:ml-2 whitespace-nowrap flex-shrink-0">
+                        新手指南
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 新手完整指南 Modal (預設隱藏) -->
+    <div id="guideModal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal-backdrop bg-slate-900/60 p-4 opacity-0 transition-opacity duration-300 pointer-events-none" style="pointer-events: auto;">
+        <div class="bg-white rounded-3xl shadow-2xl w-full max-w-4xl my-8 relative flex flex-col max-h-[85vh] transition-transform duration-300 transform scale-95">
+            <div class="p-6 md:p-8 border-b border-slate-200 flex justify-between items-center sticky top-0 bg-white/95 backdrop-blur z-10 rounded-t-3xl">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-800 flex items-center"><span class="text-4xl mr-3">📖</span> 零基礎新手大百科</h2>
+                <button onclick="toggleGuide()" class="text-slate-400 hover:text-rose-500 text-4xl leading-none transition-colors">&times;</button>
+            </div>
+            <div class="p-6 md:p-10 overflow-y-auto space-y-10 text-slate-700 leading-relaxed text-base md:text-lg custom-scrollbar">
+                
+                <section>
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-4 border-l-4 border-indigo-600 pl-3">第一課：這個系統在算什麼？</h3>
+                    <p class="mb-4">歡迎來到全息人格探索系統！本系統融合了三套世界頂尖的心理學理論，為你看見最完整的自己：</p>
+                    <ul class="list-disc pl-6 space-y-3 font-medium bg-indigo-50 p-6 rounded-2xl border border-indigo-100 shadow-sm">
+                        <li><strong class="text-indigo-800">榮格八維 (Hardware 硬體)：</strong><br>你的大腦神經運作偏好。你怎麼接收資訊？怎麼做決定？</li>
+                        <li><strong class="text-amber-700">九型人格 (Software 軟體)：</strong><br>你的核心恐懼與靈魂慾望。為了什麼而活？最怕失去什麼？</li>
+                        <li><strong class="text-emerald-700">本能副型 (Battery 電力)：</strong><br>你把精力花在哪裡？求生？社交？還是一對一親密關係？</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-bold text-rose-600 mb-4 border-l-4 border-rose-600 pl-3">第二課：八維的「面具」理論</h3>
+                    <p class="mb-4">每個人都擁有所有八種功能，只是強度不同。這就像一個王國的宮廷：</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-indigo-100 p-4 rounded-xl border border-indigo-200">
+                            <strong class="text-indigo-900 block mb-1">👑 英雄 (第一功能)</strong>
+                            <p class="text-sm">國王/女王。你的核心自我，最強大也最傲慢。</p>
+                        </div>
+                        <div class="bg-blue-100 p-4 rounded-xl border border-blue-200">
+                            <strong class="text-blue-900 block mb-1">🛡️ 父母 (第二功能)</strong>
+                            <p class="text-sm">輔政大臣。負責任、照顧他人，有時會說教。</p>
+                        </div>
+                        <div class="bg-emerald-100 p-4 rounded-xl border border-emerald-200">
+                            <strong class="text-emerald-900 block mb-1">🧸 兒童 (第三功能)</strong>
+                            <p class="text-sm">皇子/公主。放鬆、貪玩、舒緩壓力的地方。</p>
+                        </div>
+                        <div class="bg-rose-100 p-4 rounded-xl border border-rose-200">
+                            <strong class="text-rose-900 block mb-1">👹 劣勢 (第四功能)</strong>
+                            <p class="text-sm">地下室的怪物。你的自卑與恐懼，也是成長的關鍵。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="text-2xl font-bold text-amber-600 mb-4 border-l-4 border-amber-600 pl-3">第三課：怎麼看這個網站？</h3>
+                    <ol class="list-decimal pl-6 space-y-3 font-medium text-slate-600">
+                        <li><strong>輸入數據：</strong>若你有 <a href="https://sakinorva.net/functions" target="_blank" class="text-indigo-500 underline decoration-2 decoration-indigo-300 hover:text-indigo-700">Sakinorva</a> 測試分數，請填入上方雷達圖區塊。</li>
+                        <li><strong>比對分析：</strong>可以加入比起朋友、伴侶的分數，或與 16 型人格的平均值做比較。</li>
+                        <li><strong>全息解密：</strong>往下滑到「全息解析器」，選擇你的 MBTI 類型 (若知道九型與副型更佳)，系統會生成超過 2000 字的深度報告。</li>
+                        <li><strong>自我覺察：</strong>閱讀你的「壓力迴圈」與「盲點指南」，這是讓你變強的關鍵文件。</li>
+                    </ol>
+                </section>
+
+                <div class="mt-8 p-6 bg-slate-800 text-white rounded-2xl text-center shadow-xl">
+                    <p class="text-xl font-bold mb-2">準備好面對最真實的自己了嗎？</p>
+                    <p class="text-slate-300 mb-4">這不是一個讓你貼標籤的遊戲，這是一張讓你走出迷宮的地圖。</p>
+                    <button onclick="toggleGuide()" class="bg-rose-500 hover:bg-rose-600 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-rose-500/50">
+                        開始探索 →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主頁面內容 -->
+    <div class="max-w-7xl mx-auto space-y-16 p-4 md:p-8 pb-32">
+        
+        <!-- Header -->
+        <header class="text-center pt-8 md:pt-16 relative">
+            <div class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-[0.03]">
+                <span class="text-[12rem] md:text-[20rem]">🧠</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 tracking-tight relative z-10 leading-tight">榮格八維 × 九型人格 <br><span class="gradient-text">全息探索系統</span> <span class="text-xs md:text-lg text-white bg-rose-500 px-3 py-1 rounded-full align-top shadow-lg transform rotate-12 inline-block ml-2">Ultimate Edition</span></h1>
+            <p class="text-slate-500 text-lg md:text-xl font-medium mb-8 relative z-10 max-w-2xl mx-auto px-4">從認知神經科學到靈魂深處，為自我覺察者打造的最全面人性解密兵器</p>
+            
+            <div class="flex justify-center gap-4 relative z-10">
+                <a href="#radar-section" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-indigo-500/30 flex items-center">
+                    <span class="mr-2">📊</span> 開始繪製雷達圖
+                </a>
+                <a href="#analyzer-section" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-6 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-xl flex items-center">
+                    <span class="mr-2">🔮</span> 深度人格解析
+                </a>
+            </div>
+        </header>
+
+        <!-- 區塊 1：動態單/雙人專屬雷達圖生成器 -->
+        <section id="radar-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 md:p-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+                
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800 flex items-center"><span class="text-3xl mr-3">📊</span> 專屬大腦認知雷達圖</h2>
+                        <a href="https://sakinorva.net/functions" target="_blank" class="text-sm text-indigo-500 hover:text-indigo-700 font-medium mt-1 inline-block hover:underline decoration-indigo-300 decoration-2">還沒測過？點此前往 Sakinorva 測試 →</a>
+                    </div>
+                    
+                    <div class="flex gap-2">
+                         <button id="saveBtn" onclick="saveUserData()" class="bg-emerald-100 hover:bg-emerald-200 text-emerald-700 font-bold py-2 px-4 rounded-xl transition-all border border-emerald-300 flex items-center text-sm">
+                            <span class="mr-1">💾</span> 儲存數據
+                        </button>
+                        <button id="toggleDualBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 px-4 rounded-xl transition-all border border-slate-300 shadow-sm flex items-center group text-sm">
+                            <span class="mr-2 group-hover:scale-110 transition-transform font-mono text-lg" id="toggleDualIcon">➕</span> <span id="toggleDualText">加入比對</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- 左側輸入區 (User A) -->
+                    <div class="lg:col-span-1 bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-inner flex flex-col transition-all">
+                        <div class="flex justify-between items-center mb-4 border-b border-slate-200 pb-2">
+                             <h3 class="font-bold text-slate-800 flex items-center" id="userATitle">👤 你的分數</h3>
+                             <button class="text-xs text-slate-400 hover:text-rose-500 underline" onclick="clearInputs('a')">清空</button>
+                        </div>
+                       
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-2">
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="aTe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="80"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="aTi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="70"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="aFe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="60"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="aFi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="90"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="aSe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="50"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="aSi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="40"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="aNe" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="85"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="aNi" class="w-full p-2 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-rose-400 focus:border-rose-400 transition-all font-mono text-center" value="75"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 中間輸入區 (User B) -->
+                    <div id="userB_panel" class="lg:col-span-1 bg-blue-50/80 p-6 rounded-2xl border border-blue-200 shadow-inner flex flex-col hidden opacity-0 transition-all duration-300 transform translate-y-4">
+                        <div class="flex justify-between items-center mb-4 border-b border-blue-200 pb-2">
+                             <h3 class="font-bold text-blue-700 flex items-center">👥 比對對象</h3>
+                             <button class="text-xs text-blue-400 hover:text-blue-600 underline" onclick="clearInputs('b')">清空</button>
+                        </div>
+                        <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-2">
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Te / 執行力</label><input type="number" id="bTe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="60"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ti / 邏輯力</label><input type="number" id="bTi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="85"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fe / 共情力</label><input type="number" id="bFe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="75"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Fi / 價值觀</label><input type="number" id="bFi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="50"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Se / 當下感</label><input type="number" id="bSe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="80"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Si / 經驗庫</label><input type="number" id="bSi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="65"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ne / 腦洞力</label><input type="number" id="bNe" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="60"></div>
+                            <div><label class="text-xs font-bold text-slate-500 block mb-1">Ni / 預知力</label><input type="number" id="bNi" class="w-full p-2 text-sm border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all font-mono text-center" value="70"></div>
+                        </div>
+                    </div>
+
+                    <!-- 右側圖表區 -->
+                    <div id="chartPanel" class="lg:col-span-3 relative min-h-[400px] md:min-h-[500px] flex flex-col justify-start items-center bg-white rounded-2xl transition-all duration-300">
+                        <div class="w-full flex flex-col sm:flex-row gap-3 mb-6 z-10 p-1">
+                            <select id="compareSelector" class="flex-1 p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-400 text-sm font-bold text-slate-700 shadow-sm cursor-pointer bg-slate-50 hover:bg-white transition-colors">
+                                <option value="">-- 選填：加入 16 型人格平均常模疊加比對 --</option>
+                                <option value="ENTP">疊加 平均 ENTP</option><option value="INTP">疊加 平均 INTP</option>
+                                <option value="ENTJ">疊加 平均 ENTJ</option><option value="INTJ">疊加 平均 INTJ</option>
+                                <option value="ENFP">疊加 平均 ENFP</option><option value="INFP">疊加 平均 INFP</option>
+                                <option value="ENFJ">疊加 平均 ENFJ</option><option value="INFJ">疊加 平均 INFJ</option>
+                                <option value="ESTP">疊加 平均 ESTP</option><option value="ISTP">疊加 平均 ISTP</option>
+                                <option value="ESTJ">疊加 平均 ESTJ</option><option value="ISTJ">疊加 平均 ISTJ</option>
+                                <option value="ESFP">疊加 平均 ESFP</option><option value="ISFP">疊加 平均 ISFP</option>
+                                <option value="ESFJ">疊加 平均 ESFJ</option><option value="ISFJ">疊加 平均 ISFJ</option>
+                            </select>
+                        </div>
+                        <div class="w-full flex-1 relative chart-container"><canvas id="customRadarChart"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 2：動態全息探索器 -->
+        <section id="analyzer-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-slate-900 rounded-3xl shadow-2xl p-6 md:p-12 text-white relative overflow-hidden border border-slate-800">
+                <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+                    <div class="absolute -top-20 -right-20 w-96 h-96 bg-indigo-500 rounded-full blur-3xl mix-blend-screen animate-pulse"></div>
+                    <div class="absolute -bottom-20 -left-20 w-96 h-96 bg-rose-500 rounded-full blur-3xl mix-blend-screen animate-pulse" style="animation-delay: 1s;"></div>
+                </div>
+
+                <div class="relative z-10">
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 gradient-text inline-block pb-2">🔮 終極人性與靈魂演化解析器</h2>
+                        <p class="text-slate-400 text-lg max-w-2xl mx-auto">大腦邏輯 (MBTI) × 靈魂動機 (九型) × 生存本能 (副型) <br>三位一體，找出最精準的你</p>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-12 flex-wrap">
+                        <div class="w-full md:w-auto relative group">
+                            <select id="mbtiSelector" class="w-full md:w-64 px-5 py-4 rounded-xl text-lg font-bold text-slate-900 bg-white border-4 border-indigo-400 focus:outline-none focus:border-rose-400 transition-all cursor-pointer shadow-lg hover:shadow-indigo-500/50 appearance-none">
+                                <option value="" disabled selected>1. 選擇 MBTI 類型...</option>
+                                <option value="ENTP">ENTP (發明家)</option><option value="INTP">INTP (邏輯學家)</option>
+                                <option value="ENTJ">ENTJ (陸軍元帥)</option><option value="INTJ">INTJ (建築師)</option>
+                                <option value="ENFP">ENFP (競選者)</option><option value="INFP">INFP (調停者)</option>
+                                <option value="ENFJ">ENFJ (主人公)</option><option value="INFJ">INFJ (提倡者)</option>
+                                <option value="ESTP">ESTP (創業者)</option><option value="ISTP">ISTP (鑑賞家)</option>
+                                <option value="ESTJ">ESTJ (總經理)</option><option value="ISTJ">ISTJ (物流師)</option>
+                                <option value="ESFP">ESFP (表演者)</option><option value="ISFP">ISFP (探險家)</option>
+                                <option value="ESFJ">ESFJ (執政官)</option><option value="ISFJ">ISFJ (守衛者)</option>
+                            </select>
+                            <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-500">▼</div>
+                        </div>
+
+                        <span class="text-2xl text-slate-500 hidden md:block">+</span>
+                        
+                        <div class="w-full md:w-auto relative group">
+                            <select id="enneagramSelector" class="w-full md:w-64 px-5 py-4 rounded-xl text-lg font-bold text-slate-900 bg-white border-4 border-amber-400 focus:outline-none focus:border-rose-400 transition-all cursor-pointer shadow-lg hover:shadow-amber-500/50 appearance-none">
+                                <option value="" disabled selected>2. 九型人格 (選填)...</option>
+                                <option value="1">1 型 (改革者)</option><option value="2">2 型 (助人者)</option>
+                                <option value="3">3 型 (成就者)</option><option value="4">4 型 (藝術型)</option>
+                                <option value="5">5 型 (觀察者)</option><option value="6">6 型 (忠誠型)</option>
+                                <option value="7">7 型 (活躍型)</option><option value="8">8 型 (挑戰者)</option>
+                                <option value="9">9 型 (和平型)</option>
+                            </select>
+                             <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-500">▼</div>
+                        </div>
+
+                        <span class="text-2xl text-slate-500 hidden md:block">+</span>
+                        
+                        <div class="w-full md:w-auto relative group">
+                            <select id="variantSelector" class="w-full md:w-64 px-5 py-4 rounded-xl text-lg font-bold text-slate-900 bg-white border-4 border-emerald-400 focus:outline-none focus:border-rose-400 transition-all cursor-pointer shadow-lg hover:shadow-emerald-500/50 appearance-none">
+                                <option value="" disabled selected>3. 本能副型 (選填)...</option>
+                                <option value="SP">自保 (SP) - 資源生存</option>
+                                <option value="SO">社交 (SO) - 群體地位</option>
+                                <option value="SX">一對一 (SX) - 激情融合</option>
+                            </select>
+                             <div class="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-slate-500">▼</div>
+                        </div>
+                    </div>
+
+                    <!-- 動態生成的內容區塊 (分析器) -->
+                    <div id="analysisContainer" class="hidden space-y-12 animate-fade-in-up">
+                        
+                        <!-- 🔥 終極個人化專屬報告 -->
+                        <div class="bg-gradient-to-br from-indigo-900/90 via-slate-800 to-rose-900/90 p-8 rounded-3xl border border-white/20 shadow-2xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-10 text-9xl">✨</div>
+                            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-6 border-b border-white/20 pb-4 flex items-center">
+                                <span class="mr-3">📜</span> 你的終極專屬性格診斷書
+                            </h3>
+                            <div id="ultimateReport" class="text-slate-200 text-lg leading-relaxed space-y-5 font-medium tracking-wide">
+                                <!-- Report generated via JS -->
+                            </div>
+                        </div>
+
+                        <!-- 核心頭像與高低階屬性 -->
+                        <div class="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10 shadow-lg">
+                            <div class="flex flex-col md:flex-row items-center md:items-start gap-8">
+                                <div class="flex flex-col items-center justify-center bg-gradient-to-b from-white/20 to-transparent rounded-full w-40 h-40 flex-shrink-0 shadow-inner border-2 border-white/30 transform hover:scale-105 transition-transform">
+                                    <span id="avatarIcon" class="avatar-emoji text-7xl"></span>
+                                </div>
+                                <div class="flex-1 w-full text-center md:text-left">
+                                    <div class="flex items-center justify-center md:justify-start gap-3 mb-2 flex-wrap">
+                                        <h3 class="text-4xl font-extrabold text-white tracking-tight" id="typeName"></h3>
+                                        <span id="mbtiColorBadge" class="hidden"></span>
+                                    </div>
+                                    <p class="text-indigo-200 font-medium text-lg mb-6" id="typeSubtitle"></p>
+                                    
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                                        <div class="bg-emerald-900/40 p-5 rounded-xl border border-emerald-500/30">
+                                            <div class="text-emerald-400 font-bold mb-2 text-base flex items-center"><span class="mr-2">🌟</span> 高階健康狀態</div>
+                                            <p class="text-white text-sm leading-relaxed" id="mbtiHigh"></p>
+                                        </div>
+                                        <div class="bg-rose-900/40 p-5 rounded-xl border border-rose-500/30">
+                                            <div class="text-rose-400 font-bold mb-2 text-base flex items-center"><span class="mr-2">⚠️</span> 低階不健康狀態</div>
+                                            <p class="text-white text-sm leading-relaxed" id="mbtiLow"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MBTI 核心功能深度解析 -->
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-4 border-b border-slate-700 pb-3">🧠 MBTI 核心功能深度解析</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
+                                    <div class="text-rose-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥇</span> 第 1 位：主導本能 (Hero)</div>
+                                    <p class="text-sm text-slate-300 leading-relaxed" id="descHero"></p>
+                                </div>
+                                <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
+                                    <div class="text-blue-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥈</span> 第 2 位：理性煞車 (Parent)</div>
+                                    <p class="text-sm text-slate-300 leading-relaxed" id="descParent"></p>
+                                </div>
+                                <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
+                                    <div class="text-emerald-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥉</span> 第 3 位：純真樂泉 (Child)</div>
+                                    <p class="text-sm text-slate-300 leading-relaxed" id="descChild"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 完整八維排序與關鍵字 -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-emerald-300 mb-6 border-b border-slate-700 pb-3">⚙️ 你的專屬八維動力排序</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 gap-y-6 mb-8" id="eightFunctionsGrid">
+                                <!-- JS Generated -->
+                            </div>
+                        </div>
+
+                        <!-- 認知軸線與壓力黑化 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
+                                <h3 class="text-xl font-bold text-cyan-300 mb-4 border-b border-slate-700 pb-3">⚖️ 認知軸線 (Axes)</h3>
+                                <div class="space-y-5">
+                                    <div class="bg-slate-900/80 p-5 rounded-xl border-l-4 border-cyan-400 shadow-inner">
+                                        <div class="text-xs text-cyan-500 font-bold mb-1">👁️ 觀察世界的感知軸</div>
+                                        <div id="perceivingAxis" class="text-lg font-black text-white mb-2 tracking-wide"></div>
+                                        <p id="perceivingAxisDesc" class="text-xs text-slate-300 leading-relaxed"></p>
+                                    </div>
+                                    <div class="bg-slate-900/80 p-5 rounded-xl border-l-4 border-fuchsia-400 shadow-inner">
+                                        <div class="text-xs text-fuchsia-500 font-bold mb-1">🧠 做決定的判斷軸</div>
+                                        <div id="judgingAxis" class="text-lg font-black text-white mb-2 tracking-wide"></div>
+                                        <p id="judgingAxisDesc" class="text-xs text-slate-300 leading-relaxed"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-slate-800/40 p-6 rounded-2xl border border-slate-700">
+                                <h3 class="text-xl font-bold text-rose-400 mb-4 border-b border-slate-700 pb-3">🌪️ 壓力狀態剖析</h3>
+                                <div class="space-y-5">
+                                    <div class="bg-rose-950/40 p-5 rounded-xl border border-rose-500/30 shadow-inner">
+                                        <div class="text-xs text-rose-400 font-bold mb-1">🔄 慢性壓力：迴圈 (Loop)</div>
+                                        <div id="loopTitle" class="text-sm font-black text-white mb-2 bg-rose-500/20 inline-block px-2 py-0.5 rounded"></div>
+                                        <p id="loopDesc" class="text-xs text-slate-300 leading-relaxed"></p>
+                                    </div>
+                                    <div class="bg-rose-950/40 p-5 rounded-xl border border-rose-500/30 shadow-inner">
+                                        <div class="text-xs text-rose-400 font-bold mb-1">💥 急性崩潰：劫持 (Grip)</div>
+                                        <div id="gripTitle" class="text-sm font-black text-white mb-2 bg-rose-500/20 inline-block px-2 py-0.5 rounded"></div>
+                                        <p id="gripDesc" class="text-xs text-slate-300 leading-relaxed"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 弱點武器化指南 -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-4 border-b border-slate-700 pb-3">🚀 弱點武器化指南 (盲區突破)</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                                <div class="bg-slate-800/80 p-6 rounded-xl border-l-4 border-emerald-500 shadow-lg">
+                                    <h4 class="text-lg font-bold text-emerald-400 mb-2" id="guideInfTitle"></h4>
+                                    <div class="text-slate-200 text-sm leading-relaxed" id="guideInfText"></div>
+                                </div>
+                                <div class="bg-slate-800/80 p-6 rounded-xl border-l-4 border-amber-500 shadow-lg">
+                                    <h4 class="text-lg font-bold text-amber-400 mb-2" id="guideTriTitle"></h4>
+                                    <div class="text-slate-200 text-sm leading-relaxed" id="guideTriText"></div>
+                                </div>
+                                <div class="bg-slate-800/80 p-6 rounded-xl border-l-4 border-red-500 shadow-lg">
+                                    <h4 class="text-lg font-bold text-red-400 mb-2" id="guideDemTitle"></h4>
+                                    <div class="text-slate-200 text-sm leading-relaxed" id="guideDemText"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 四面心智... (隱藏但與 ID 綁定) -->
+                        <div class="hidden">
+                             <!-- Placeholders for script bindings if they were not already removed from logic -->
+                            <span id="mindEgo"></span><span id="mindSub"></span><span id="mindUnc"></span><span id="mindSup"></span>
+                            <span id="lifeStage1"></span><span id="lifeStage2"></span><span id="lifeStage3"></span><span id="lifeStage4"></span>
+                            <span id="relDual"></span><span id="relMirror"></span><span id="relConflict"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3：榮格八維原型深度解析 (完整版) -->
+        <section id="theory-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center mb-3">🏛️ 榮格八維原型深度解析</h2>
+                <div class="flex justify-center mb-4">
+                    <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm">John Beebe 八維原型理論</span>
+                </div>
+                <p class="text-center text-slate-600 mb-10 max-w-3xl mx-auto text-lg">人類的意識與潛意識是由 8 個不同的人格原型所主導，每一個位置都有其光明與黑暗面。</p>
+
+                <!-- 陽面功能 -->
+                <div class="mb-12">
+                    <div class="flex items-center gap-3 mb-6 border-b-2 border-blue-200 pb-4">
+                        <span class="text-4xl">☀️</span>
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-blue-800">陽面功能 (Ego 意識界)：你的日常武器</h3>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-rose-50 to-red-50 p-6 rounded-2xl border border-rose-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🥇</span>
+                                <h4 class="text-xl font-extrabold text-rose-700">第 1 位：英雄 (Hero / Dominant)</h4>
+                            </div>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-rose-800">本質：</strong>你意識的核心，如同呼吸般自然。是你感知世界與做決定的絕對主導力量。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-rose-800">健康狀態：</strong>帶給你極大的自信、天賦與成就感，是你解決問題的第一把交椅。</p>
+                            <div class="bg-rose-100 border border-rose-300 p-4 rounded-xl">
+                                <p class="text-rose-800 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>因為太過強大，容易導致「傲慢」與「獨裁」。當英雄位過度膨脹時，會完全聽不進別人的意見，並盲目忽視其他可能。</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🥈</span>
+                                <h4 class="text-xl font-extrabold text-blue-700">第 2 位：父母 (Parent / Auxiliary)</h4>
+                            </div>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-blue-800">本質：</strong>輔助與責任的化身。用來「煞車」並平衡衝動的主導功能。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-blue-800">健康狀態：</strong>帶有成熟、照顧與保護的特質。你用這個功能來教育他人、給予建議，並讓自己與外界和諧接軌。</p>
+                            <div class="bg-blue-100 border border-blue-300 p-4 rounded-xl">
+                                <p class="text-blue-800 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>如果發展不良，可能會變成過度說教、干涉別人，或是用一種「我是為你好」的居高臨下態度來壓迫他人。</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-2xl border border-emerald-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🥉</span>
+                                <h4 class="text-xl font-extrabold text-emerald-700">第 3 位：永恆少年 (Child / Tertiary)</h4>
+                            </div>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-emerald-800">本質：</strong>玩樂、放鬆與純真的所在。這是你受傷時的避風港。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-emerald-800">健康狀態：</strong>帶來無窮的創造力、幽默感與活力。當你使用這個功能時，你會感到非常開心且沒有壓力。</p>
+                            <div class="bg-emerald-100 border border-emerald-300 p-4 rounded-xl">
+                                <p class="text-emerald-800 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>容易表現出任性、不負責任與盲目自信。在壓力下，它會和主導功能形成惡性迴圈 (Loop)，讓你變得像個不講理的頑童。</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-slate-50 to-slate-100 p-6 rounded-2xl border border-slate-300 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🛡️</span>
+                                <h4 class="text-xl font-extrabold text-slate-600">第 4 位：阿尼瑪 / 劣勢位 (Inferior)</h4>
+                            </div>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-slate-700">本質：</strong>意識與潛意識的邊界。是你心中最自卑、最恐懼、卻又最渴望的領域。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-slate-700">健康狀態：</strong>這是通往「個體化」與終極幸福的鑰匙。中年以後若能擁抱它，將獲得前所未有的內在平靜與完整感。</p>
+                            <div class="bg-slate-200 border border-slate-300 p-4 rounded-xl">
+                                <p class="text-slate-700 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>平時極度排斥且笨拙。在遭受重大打擊時，它會直接「劫持 (Grip)」你的大腦，讓你做出完全反常、極端且具毀滅性的行為。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 陰面功能 -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6 border-b-2 border-slate-600 pb-4">
+                        <span class="text-4xl">🌑</span>
+                        <div>
+                            <h3 class="text-2xl font-extrabold text-slate-800">陰面功能 (Shadow 潛意識界)：你的防禦與深淵</h3>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-600 shadow-md hover:shadow-xl transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">⚔️</span>
+                                <h4 class="text-xl font-extrabold text-white">第 5 位：對手 (Opponent)</h4>
+                            </div>
+                            <p class="text-slate-300 mb-3 leading-relaxed"><strong class="text-slate-200">本質：</strong>英雄位的反面。當你的主導功能受挫、被否定或面臨極大挑戰時，對手就會跳出來防禦。</p>
+                            <div class="bg-slate-700/70 border border-slate-600 p-4 rounded-xl">
+                                <p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">狀態：</strong>它充滿了懷疑、防備與固執。你會用這個功能來反駁別人，或是對自己產生深深的「冒名頂替症候群」。它迫使你停下來反思自己的絕對自信。</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-purple-700 shadow-md hover:shadow-xl transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🧙</span>
+                                <h4 class="text-xl font-extrabold text-purple-300">第 6 位：巫師 / 嚴父 (Senex / Critic)</h4>
+                            </div>
+                            <p class="text-slate-300 mb-3 leading-relaxed"><strong class="text-slate-200">本質：</strong>父母位的反面。極度挑剔、嚴苛且毫不留情的內在批判者。</p>
+                            <div class="bg-slate-700/70 border border-slate-600 p-4 rounded-xl">
+                                <p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">狀態：</strong>我們經常用它來找出別人的漏洞，藉由貶低別人來抬高自己。但同時，它也是你對自己最嚴厲的鞭策，蘊含著深刻且冰冷的智慧。</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-amber-600 shadow-md hover:shadow-xl transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">🤡</span>
+                                <h4 class="text-xl font-extrabold text-amber-300">第 7 位：小丑 / 欺騙者 (Trickster)</h4>
+                            </div>
+                            <p class="text-slate-300 mb-3 leading-relaxed"><strong class="text-slate-200">本質：</strong>絕對的雙盲區。你以為自己很懂，其實你完全不懂的領域。</p>
+                            <div class="bg-slate-700/70 border border-slate-600 p-4 rounded-xl">
+                                <p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">狀態：</strong>它會製造混亂、扭曲資訊。你常會用這個功能來自我欺騙，或在辯不過別人時用來「捉弄、混淆視聽」。這是一個無法依賴、必須學會放手的死角。</p>
+                            </div>
+                        </div>
+                        <div class="bg-gradient-to-br from-slate-900 to-red-950 p-6 rounded-2xl border border-rose-700 shadow-md hover:shadow-xl transition-shadow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="text-3xl">👹</span>
+                                <h4 class="text-xl font-extrabold text-rose-400">第 8 位：惡魔 (Demon)</h4>
+                            </div>
+                            <p class="text-slate-300 mb-3 leading-relaxed"><strong class="text-slate-200">本質：</strong>最深層的陰影。平時完全休眠，當自我(Ego)面臨徹底毀滅或背叛時才會覺醒。</p>
+                            <div class="bg-rose-950/80 border border-rose-800 p-4 rounded-xl">
+                                <p class="text-rose-200 text-sm leading-relaxed"><strong>狀態：</strong>一旦爆發，它會帶來玉石俱焚的毀滅力，摧毀你的人生與關係。但若能刻意修煉並接納它，惡魔將轉化為絕境逢生時「最強大的守護神」。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3b：九型人格 靈魂動力學全書 -->
+        <section id="enneagram-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center mb-3">🌟 九型人格 靈魂動力學全書</h2>
+                <p class="text-center text-slate-600 max-w-3xl mx-auto mb-10 text-lg">MBTI 決定了大腦如何運作，而九型人格揭示了靈魂深處「你在害怕什麼」。</p>
+
+                <!-- 九型圖示意 -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 md:p-10 mb-12 text-white">
+                    <h3 class="text-xl font-extrabold text-amber-300 mb-8 text-center">九型人格圓形圖示意</h3>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-slate-100 rounded-[2rem] p-3 md:p-6 shadow-inner border border-slate-300">
+                            <svg viewBox="-40 -20 780 760" class="w-full h-auto" role="img" aria-label="九型人格整合與解離路徑圖">
+                                <defs>
+                                    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#f0b323"></path>
+                                    </marker>
+                                    <marker id="arrow-rose" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#f43f5e"></path>
+                                    </marker>
+                                </defs>
+
+                                <circle cx="350" cy="350" r="320" fill="none" stroke="#dfe4ea" stroke-width="5"></circle>
+                                <circle cx="350" cy="350" r="235" fill="none" stroke="#bec7d3" stroke-width="6"></circle>
+
+                                <line x1="120" y1="280" x2="500" y2="145" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+                                <line x1="500" y1="145" x2="430" y2="535" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+                                <line x1="430" y1="535" x2="580" y2="280" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+                                <line x1="580" y1="280" x2="200" y2="145" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+                                <line x1="200" y1="145" x2="270" y2="535" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+                                <line x1="270" y1="535" x2="120" y2="280" stroke="#f0b323" stroke-width="5" marker-end="url(#arrow-amber)"></line>
+
+                                <line x1="350" y1="90" x2="150" y2="430" stroke="#f43f5e" stroke-width="5" marker-end="url(#arrow-rose)"></line>
+                                <line x1="150" y1="430" x2="550" y2="430" stroke="#f43f5e" stroke-width="5" marker-end="url(#arrow-rose)"></line>
+                                <line x1="550" y1="430" x2="350" y2="90" stroke="#f43f5e" stroke-width="5" marker-end="url(#arrow-rose)"></line>
+
+                                <g fill="#334155" stroke="#ffffff" stroke-width="6">
+                                    <circle cx="350" cy="90" r="30"></circle>
+                                    <circle cx="500" cy="145" r="30"></circle>
+                                    <circle cx="580" cy="280" r="30"></circle>
+                                    <circle cx="550" cy="430" r="30"></circle>
+                                    <circle cx="430" cy="535" r="30"></circle>
+                                    <circle cx="270" cy="535" r="30"></circle>
+                                    <circle cx="150" cy="430" r="30"></circle>
+                                    <circle cx="120" cy="280" r="30"></circle>
+                                    <circle cx="200" cy="145" r="30"></circle>
+                                </g>
+
+                                <g fill="#f8fafc" font-size="34" font-weight="800" text-anchor="middle" dominant-baseline="middle">
+                                    <text x="350" y="90">9</text>
+                                    <text x="500" y="145">1</text>
+                                    <text x="580" y="280">2</text>
+                                    <text x="550" y="430">3</text>
+                                    <text x="430" y="535">4</text>
+                                    <text x="270" y="535">5</text>
+                                    <text x="150" y="430">6</text>
+                                    <text x="120" y="280">7</text>
+                                    <text x="200" y="145">8</text>
+                                </g>
+
+                                <g fill="#334155" font-size="34" font-weight="700">
+                                    <text x="350" y="56" text-anchor="middle">和平者</text>
+                                    <text x="548" y="126" text-anchor="start">完美主義</text>
+                                    <text x="625" y="305" text-anchor="start">給予者</text>
+                                    <text x="618" y="452" text-anchor="start">成就者</text>
+                                    <text x="466" y="611" text-anchor="start">浪漫主義</text>
+                                    <text x="270" y="611" text-anchor="middle">觀察者</text>
+                                    <text x="80" y="452" text-anchor="end">忠誠者</text>
+                                    <text x="75" y="305" text-anchor="end">活躍型</text>
+                                    <text x="150" y="126" text-anchor="end">挑戰者</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5 text-sm">
+                            <div class="bg-rose-500/10 border border-rose-400/30 rounded-xl p-3">
+                                <p class="font-bold text-rose-300 mb-1">解離向 (壓力，順著箭頭)</p>
+                                <p class="text-slate-200">1→4, 2→8, 3→9, 4→2, 5→7, 6→3, 7→1, 8→5, 9→6</p>
+                            </div>
+                            <div class="bg-amber-500/10 border border-amber-400/30 rounded-xl p-3">
+                                <p class="font-bold text-amber-300 mb-1">整合向 (成長，逆著箭頭)</p>
+                                <p class="text-slate-200">1→7, 2→4, 3→6, 4→1, 5→8, 6→9, 7→5, 8→2, 9→3</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6 space-y-2">
+                        <p class="text-slate-300 text-sm">👉 圖中箭頭方向 代表「壓力解離 (退步)」的順序。</p>
+                        <p class="text-slate-300 text-sm">🔄 逆著箭頭走，即為「整合演化 (成長)」的路徑。</p>
+                    </div>
+                </div>
+
+                <!-- 健康階層 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-3 flex items-center"><span class="text-3xl mr-3">📈</span>九型人格：九大健康階層 (Levels of Health)</h3>
+                    <p class="text-slate-600 mb-6 text-lg">你的型號不會變，但你的「健康度」會上下浮動，這決定了你是天使還是惡魔：</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-b from-emerald-50 to-emerald-100 p-6 rounded-2xl border border-emerald-300 shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-2xl">🌱</span>
+                                <h4 class="font-extrabold text-emerald-800 text-lg">Level 1~3 (健康階層 / 覺醒狀態)</h4>
+                            </div>
+                            <p class="text-emerald-900 leading-relaxed">你克服了該型號的核心恐懼，放下了執念。表現出該型號最美好、自由、對社會有貢獻的一面。</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-amber-50 to-amber-100 p-6 rounded-2xl border border-amber-300 shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-2xl">⚖️</span>
+                                <h4 class="font-extrabold text-amber-800 text-lg">Level 4~6 (一般階層 / 防禦狀態)</h4>
+                            </div>
+                            <p class="text-amber-900 leading-relaxed">大多數人的常態。為了保護自己，開始頻繁使用防禦機制，表現出性格的盲點與人際摩擦。</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-rose-50 to-rose-100 p-6 rounded-2xl border border-rose-300 shadow-sm">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="text-2xl">⚠️</span>
+                                <h4 class="font-extrabold text-rose-800 text-lg">Level 7~9 (不健康階層 / 崩潰狀態)</h4>
+                            </div>
+                            <p class="text-rose-900 leading-relaxed">極度壓力下。防禦機制徹底失控，產生嚴重的神經質、破壞性行為，甚至危及生命與他人。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 動態位移 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-3 flex items-center"><span class="text-3xl mr-3">🔄</span>動態位移：整合與解離的原理</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-rose-50 p-6 rounded-2xl border border-rose-200">
+                            <h4 class="font-extrabold text-rose-700 mb-4 text-lg flex items-center"><span class="mr-2">⚠️</span>解離向 / 壓力路徑 (順著箭頭)</h4>
+                            <p class="text-slate-700 leading-relaxed">當你面臨極度壓力、原有的防禦機制崩潰耗盡時，大腦為了生存，會無意識地「借用」箭頭指向型號的負面/低階特質來發洩。例如：平時溫和的 9 號，壓力大時會變成焦慮多疑的 6 號。</p>
+                        </div>
+                        <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200">
+                            <h4 class="font-extrabold text-emerald-700 mb-4 text-lg flex items-center"><span class="mr-2">🌱</span>整合向 / 成長路徑 (逆著箭頭)</h4>
+                            <p class="text-slate-700 leading-relaxed">當你身心極度安全、放下恐懼與執念時，你會自然長出箭頭反方向型號的正面/高階特質。例如：挑剔嚴格的 1 號放鬆後，會展現出 7 號的隨性與快樂。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 三大能量中心 -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-3 flex items-center"><span class="text-3xl mr-3">🔥</span>基礎核心：三大能量中心 (腹腦心)</h3>
+                    <p class="text-slate-600 mb-6 text-lg">這決定了我們遇到威脅時，身體的「第一反應」：</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-gradient-to-b from-red-50 to-orange-50 p-6 rounded-2xl border border-red-200 shadow-sm">
+                            <div class="text-4xl mb-3">🛡️</div>
+                            <h4 class="font-extrabold text-red-800 mb-3 text-lg">本能中心 / 腹 (8, 9, 1)</h4>
+                            <p class="text-red-900 leading-relaxed">關注邊界與控制，對抗世界的方式是身體行動。核心情緒是被壓抑或爆發的「憤怒」。</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-pink-50 to-rose-50 p-6 rounded-2xl border border-pink-200 shadow-sm">
+                            <div class="text-4xl mb-3">💖</div>
+                            <h4 class="font-extrabold text-pink-800 mb-3 text-lg">情感中心 / 心 (2, 3, 4)</h4>
+                            <p class="text-pink-900 leading-relaxed">關注自我形象與他人認同，對抗世界的方式是塑造人設。核心情緒是「羞怯與悲傷」。</p>
+                        </div>
+                        <div class="bg-gradient-to-b from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-200 shadow-sm">
+                            <div class="text-4xl mb-3">🧠</div>
+                            <h4 class="font-extrabold text-blue-800 mb-3 text-lg">思維中心 / 腦 (5, 6, 7)</h4>
+                            <p class="text-blue-900 leading-relaxed">關注安全、策略與預測，對抗世界的方式是思考分析。核心情緒是「焦慮與恐懼」。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1~9型全圖鑑 -->
+                <div>
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-6 flex items-center"><span class="text-3xl mr-3">📖</span>1~9 型：原罪、恐懼與防禦機制全圖鑑</h3>
+                    <div class="overflow-x-auto rounded-2xl shadow-sm border border-slate-200">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800 text-white">
+                                    <th class="p-4 text-left font-bold">型號 / 名稱</th>
+                                    <th class="p-4 text-left font-bold">核心原罪 (Passion)</th>
+                                    <th class="p-4 text-left font-bold">最深層的恐懼</th>
+                                    <th class="p-4 text-left font-bold">終極的慾望</th>
+                                    <th class="p-4 text-left font-bold">大腦防禦機制 (Defense Mechanism)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100">
+                                <tr class="hover:bg-rose-50/50 transition-colors">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">1. 改革者<br><span class="text-xs font-normal text-slate-500">(完美主義)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">憤怒<br><span class="text-xs font-normal text-slate-500">(Anger)</span></td>
+                                    <td class="p-4 text-slate-600">敗壞、邪惡、有缺陷、做錯事</td>
+                                    <td class="p-4 text-slate-600">善良、正直、保持平衡與正確</td>
+                                    <td class="p-4 text-slate-700"><strong>反向形成</strong> (Reaction Formation)：將內心不被允許的衝動（如憤怒）壓抑，並表現出完全相反的道德與嚴厲。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">2. 助人者<br><span class="text-xs font-normal text-slate-500">(給予者)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">驕傲<br><span class="text-xs font-normal text-slate-500">(Pride)</span></td>
+                                    <td class="p-4 text-slate-600">不被愛、不被需要、毫無價值</td>
+                                    <td class="p-4 text-slate-600">感受到被愛、被需要、成為不可或缺</td>
+                                    <td class="p-4 text-slate-700"><strong>壓抑</strong> (Repression)：強行壓抑自己的需求與痛苦，催眠自己「我不需要幫助，都是別人在需要我」。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">3. 成就者<br><span class="text-xs font-normal text-slate-500">(實踐家)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">虛榮/欺騙<br><span class="text-xs font-normal text-slate-500">(Deceit)</span></td>
+                                    <td class="p-4 text-slate-600">毫無價值、失敗、沒有成就</td>
+                                    <td class="p-4 text-slate-600">感覺有價值、成功、受人景仰</td>
+                                    <td class="p-4 text-slate-700"><strong>認同/偽裝</strong> (Identification)：為了符合世俗的成功標準，戴上面具，最終連自己都相信了這個偽裝的人設。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">4. 浪漫者<br><span class="text-xs font-normal text-slate-500">(藝術型)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">嫉妒<br><span class="text-xs font-normal text-slate-500">(Envy)</span></td>
+                                    <td class="p-4 text-slate-600">平庸無奇、沒有自我、存在被忽視</td>
+                                    <td class="p-4 text-slate-600">找到自我定位、證明自己的獨特性</td>
+                                    <td class="p-4 text-slate-700"><strong>內投作用</strong> (Introjection)：將外界的傷害內化為「是我自己有缺陷」，透過憂鬱來維持獨特的自我感。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">5. 觀察者<br><span class="text-xs font-normal text-slate-500">(思想家)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">貪婪<br><span class="text-xs font-normal text-slate-500">(Avarice)</span></td>
+                                    <td class="p-4 text-slate-600">無知、無能、被外界吞噬與耗盡</td>
+                                    <td class="p-4 text-slate-600">具備能力、知識、完全理解世界</td>
+                                    <td class="p-4 text-slate-700"><strong>隔離</strong> (Isolation)：切斷思想與情感的連結。危機時關閉情緒，退回大腦中用冷冰冰的邏輯分析一切。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">6. 忠誠者<br><span class="text-xs font-normal text-slate-500">(尋求安全)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">恐懼<br><span class="text-xs font-normal text-slate-500">(Fear)</span></td>
+                                    <td class="p-4 text-slate-600">失去支持與指引、無法獨自生存</td>
+                                    <td class="p-4 text-slate-600">獲得絕對的安全感與可靠的後盾</td>
+                                    <td class="p-4 text-slate-700"><strong>投射</strong> (Projection)：將自己內在的不安與敵意，投射到外界事物上，覺得「外面充滿了危險與想害我的人」。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">7. 活躍型<br><span class="text-xs font-normal text-slate-500">(享樂主義)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">貪食<br><span class="text-xs font-normal text-slate-500">(Gluttony)</span></td>
+                                    <td class="p-4 text-slate-600">被剝奪、陷入痛苦、失去自由</td>
+                                    <td class="p-4 text-slate-600">保持快樂、獲得滿足與無盡的體驗</td>
+                                    <td class="p-4 text-slate-700"><strong>合理化</strong> (Rationalization)：用看似正向、樂觀的理由來包裝自己的逃避行為，永遠將痛苦的現實美化。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors bg-slate-50/50">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">8. 挑戰者<br><span class="text-xs font-normal text-slate-500">(保護者)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">縱慾<br><span class="text-xs font-normal text-slate-500">(Lust)</span></td>
+                                    <td class="p-4 text-slate-600">受到傷害、被他人控制或背叛</td>
+                                    <td class="p-4 text-slate-600">保護自己、絕對掌控自己的命運</td>
+                                    <td class="p-4 text-slate-700"><strong>否認</strong> (Denial)：絕對拒絕承認自己的脆弱、恐懼或受傷，用強硬的憤怒與攻擊性來掩蓋一切弱點。</td>
+                                </tr>
+                                <tr class="hover:bg-rose-50/50 transition-colors">
+                                    <td class="p-4 font-bold text-slate-800 whitespace-nowrap">9. 和平者<br><span class="text-xs font-normal text-slate-500">(調停者)</span></td>
+                                    <td class="p-4 font-semibold text-rose-700">怠惰<br><span class="text-xs font-normal text-slate-500">(Sloth)</span></td>
+                                    <td class="p-4 text-slate-600">衝突、斷裂、失去與他人的聯繫</td>
+                                    <td class="p-4 text-slate-600">維持內在平靜與外在和諧</td>
+                                    <td class="p-4 text-slate-700"><strong>麻醉/麻木</strong> (Narcotization)：用微不足道的瑣事、成癮行為來麻痺自己，迴避真正需要解決的衝突。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3c：本能副型 深度解析 -->
+        <section id="variant-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-gradient-to-br from-slate-900 to-indigo-950 rounded-3xl shadow-lg border border-slate-700 p-6 md:p-12 text-white">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-3">🧬 本能副型 (Instinctual Variants) 深度解析</h2>
+                <p class="text-center text-slate-400 max-w-3xl mx-auto mb-10 text-lg">同一個 MBTI 與同一個九型，為什麼看起來會完全不同？因為「生物生存的本能」決定了你將能量投注在哪個領域。這被稱為九型人格的「亞型」，也是決定一個人外在氣質的最關鍵要素。</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-emerald-900/60 border border-emerald-700 p-8 rounded-2xl hover:bg-emerald-900/80 transition-colors">
+                        <div class="text-5xl mb-4">🏕️</div>
+                        <h3 class="text-xl font-extrabold text-emerald-300 mb-2">自保優先 (SP)</h3>
+                        <p class="text-emerald-400 text-xs font-bold mb-4 uppercase tracking-widest">Self-Preservation</p>
+                        <p class="text-slate-300 leading-relaxed">專注於物理上的生存、健康、資源、財務與舒適度。這類人即使是外向型，看起來也會比較接地氣、謹慎、獨立且務實。他們最先考量的是「這件事安全嗎？我有足夠的資源嗎？」</p>
+                    </div>
+                    <div class="bg-blue-900/60 border border-blue-700 p-8 rounded-2xl hover:bg-blue-900/80 transition-colors">
+                        <div class="text-5xl mb-4">🌐</div>
+                        <h3 class="text-xl font-extrabold text-blue-300 mb-2">社交優先 (SO)</h3>
+                        <p class="text-blue-400 text-xs font-bold mb-4 uppercase tracking-widest">Social</p>
+                        <p class="text-slate-300 leading-relaxed">專注於群體、地位、社會議題、歸屬感與責任。他們極度敏銳於「讀懂空氣」、掌握權力結構與人際網絡。這類人通常表現得較為外向、熱心公益，最先考量的是「我在這個群體中的位置是什麼？」</p>
+                    </div>
+                    <div class="bg-rose-900/60 border border-rose-700 p-8 rounded-2xl hover:bg-rose-900/80 transition-colors">
+                        <div class="text-5xl mb-4">🔥</div>
+                        <h3 class="text-xl font-extrabold text-rose-300 mb-2">一對一優先 (SX)</h3>
+                        <p class="text-rose-400 text-xs font-bold mb-4 uppercase tracking-widest">Sexual / One-to-One</p>
+                        <p class="text-slate-300 leading-relaxed">專注於強烈的化學反應、靈魂融合、激情與個人吸引力。他們討厭平庸，追求極致的刺激與深刻的單對單連結。這類人通常充滿個人魅力、侵略性與競爭力，最先考量的是「這能讓我感到強烈活著嗎？」</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3d：16型人格社會生存圖鑑 -->
+        <section id="social-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center mb-10">🌍 16型人格社會生存圖鑑與氣質分類</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                    <div class="bg-purple-50 border border-purple-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-3">🧠</div>
+                        <h3 class="text-xl font-extrabold text-purple-800 mb-3">NT 分析家 (紫)</h3>
+                        <p class="text-purple-700 leading-relaxed">追求知識、能力與系統效率 (xNTx)。他們是天生的發明家、工程師與戰略家，極度依賴邏輯，討厭無能與盲從。</p>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-3">🌿</div>
+                        <h3 class="text-xl font-extrabold text-emerald-800 mb-3">NF 外交家 (綠)</h3>
+                        <p class="text-emerald-700 leading-relaxed">追求真理、意義與真實自我 (xNFx)。他們是社會的良知、治療者與啟發者，重視人際間的深度連結與靈魂成長。</p>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-3">🛡️</div>
+                        <h3 class="text-xl font-extrabold text-blue-800 mb-3">SJ 守護者 (藍)</h3>
+                        <p class="text-blue-700 leading-relaxed">追求穩定、安全與社會責任 (xSxJ)。佔人口絕對多數，是維持社會運轉的基石，重視傳統、歷史與客觀規則。</p>
+                    </div>
+                    <div class="bg-amber-50 border border-amber-200 p-6 rounded-2xl hover:shadow-md transition-shadow">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h3 class="text-xl font-extrabold text-amber-800 mb-3">SP 探險家 (黃)</h3>
+                        <p class="text-amber-700 leading-relaxed">追求自由、刺激與實踐體驗 (xSxP)。他們活在當下，是靈活的解決問題專家與極限挑戰者，拒絕被任何條框束縛。</p>
+                    </div>
+                </div>
+
+                <!-- 薪資指數 -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center"><span class="text-2xl mr-2">💰</span>薪資發展指數</h3>
+                    <p class="text-slate-500 text-sm mb-4">以下為學術研究中統計的各型號相對職涯薪資發展指數（以平均值 = 100 為基準）：</p>
+                    <div class="h-64 w-full"><canvas id="salaryBarChart2" class="hidden"></canvas>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-rose-600">ENTJ</div><div class="text-xs text-slate-500 mt-1">指數 145</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-rose-500 h-2 rounded-full" style="width:97%"></div></div></div>
+                        <div class="bg-rose-50 border border-rose-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-rose-500">ESTJ</div><div class="text-xs text-slate-500 mt-1">指數 138</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-rose-400 h-2 rounded-full" style="width:92%"></div></div></div>
+                        <div class="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-indigo-600">ENTP</div><div class="text-xs text-slate-500 mt-1">指數 125</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-indigo-500 h-2 rounded-full" style="width:83%"></div></div></div>
+                        <div class="bg-indigo-50 border border-indigo-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-indigo-500">INTJ</div><div class="text-xs text-slate-500 mt-1">指數 122</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-indigo-400 h-2 rounded-full" style="width:81%"></div></div></div>
+                        <div class="bg-slate-50 border border-slate-200 p-3 rounded-xl text-center"><div class="text-2xl font-black text-slate-500">ESTP</div><div class="text-xs text-slate-500 mt-1">指數 118</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-slate-400 h-2 rounded-full" style="width:79%"></div></div></div>
+                        <div class="bg-white border-2 border-slate-300 p-3 rounded-xl text-center"><div class="text-2xl font-black text-slate-400">平均</div><div class="text-xs text-slate-500 mt-1">指數 100</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-slate-300 h-2 rounded-full" style="width:67%"></div></div></div>
+                        <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-center col-span-2"><div class="text-2xl font-black text-emerald-500">INFP</div><div class="text-xs text-slate-500 mt-1">指數 85（重視使命感勝過薪資）</div><div class="w-full bg-slate-200 rounded-full h-2 mt-2"><div class="bg-emerald-400 h-2 rounded-full" style="width:57%"></div></div></div>
+                    </div></div>
+                </div>
+
+                <!-- 性別比例 -->
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center"><span class="text-2xl mr-2">🚻</span>性別比例極端值</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-blue-700 mb-4 flex items-center text-lg"><span class="mr-2">👨</span>男性分佈</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-4 bg-blue-50 rounded-xl border border-blue-100 shadow-sm">
+                                    <span class="text-slate-700">男性最高：<strong class="text-blue-700">ISTJ</strong></span>
+                                    <span class="font-black text-blue-700 text-xl">16.4%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-blue-50 rounded-xl border border-blue-100 shadow-sm">
+                                    <span class="text-slate-700">男性稀有：<strong class="text-blue-400">INFJ</strong></span>
+                                    <span class="font-black text-blue-400 text-xl">1.2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-rose-700 mb-4 flex items-center text-lg"><span class="mr-2">👩</span>女性分佈</h4>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center p-4 bg-rose-50 rounded-xl border border-rose-100 shadow-sm">
+                                    <span class="text-slate-700">女性最高：<strong class="text-rose-700">ISFJ</strong></span>
+                                    <span class="font-black text-rose-700 text-xl">19.4%</span>
+                                </div>
+                                <div class="flex justify-between items-center p-4 bg-rose-50 rounded-xl border border-rose-100 shadow-sm">
+                                    <span class="text-slate-700">女性稀有：<strong class="text-rose-400">INTJ</strong></span>
+                                    <span class="font-black text-rose-400 text-xl">0.8%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-500 text-sm mt-6 bg-white p-4 rounded-xl border border-slate-100 leading-relaxed">※ 數據顯示：邏輯(T)型在男性中佔全球約 60%，而情感(F)型在女性中佔比高達 75%。這解釋了為何 T女 與 F男 經常在社會傳統期待中感到格格不入。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3e：迷思破解 -->
+        <section id="myths-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 rounded-3xl shadow-lg border border-slate-700 p-6 md:p-12 text-white">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white text-center mb-3">💡 心理學真相：MBTI 常見迷思破解</h2>
+                <p class="text-center text-slate-400 mb-10 text-lg">你相信過幾個錯誤的刻板印象？</p>
+                <div class="space-y-6">
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                        <p class="text-rose-400 font-bold mb-3 flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">❌</span>迷思：T (思考型) 的人沒有感情，很冷血。</p>
+                        <p class="text-emerald-300 font-bold flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">✅</span>真相：所有人都有感情。T 型只是在「做決定」時，優先使用客觀邏輯 (Te/Ti) 而非情感 (Fe/Fi)。他們一樣會哭、會愛，甚至愛得更深沉。</p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                        <p class="text-rose-400 font-bold mb-3 flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">❌</span>迷思：J (判斷型) 很愛乾淨，P (感知型) 很邋遢。</p>
+                        <p class="text-emerald-300 font-bold flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">✅</span>真相：J/P 決定的是「應對外部世界的方式」。J 喜歡事情有結論、被計畫好；P 喜歡保留選項、保持開放。很多 INTP (P型) 內心極度有條理，而某些 ENFJ (J型) 房間可能亂七八糟。</p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                        <p class="text-rose-400 font-bold mb-3 flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">❌</span>迷思：I (內向型) 都是不擅長社交的社恐。</p>
+                        <p class="text-emerald-300 font-bold flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">✅</span>真相：I 代表「能量回充的方式」是獨處。很多內向型（如 INFJ, ISFJ）具備極高的社交技巧與同理心，只是他們社交完需要回家「充電」。</p>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors">
+                        <p class="text-rose-400 font-bold mb-3 flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">❌</span>迷思：人格類型是可以被「改變」的。</p>
+                        <p class="text-emerald-300 font-bold flex items-start text-lg"><span class="mr-3 text-xl flex-shrink-0">✅</span>真相：在榮格理論中，核心類型（主導功能）終生不變。你改變的不是類型，而是你變得「更成熟」了（成功整合了底層的弱勢功能），讓你看起來像個全能者。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 3f：榮格個體化語錄 -->
+        <section id="individuation-section" class="scroll-mt-24 transition-all duration-500">
+            <div class="bg-gradient-to-br from-amber-50 via-white to-indigo-50 rounded-3xl shadow-lg border border-slate-200 p-8 md:p-16 text-center relative overflow-hidden">
+                <div class="absolute -top-20 -left-20 w-80 h-80 bg-amber-200/30 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-indigo-200/30 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="relative z-10 max-w-4xl mx-auto">
+                    <div class="text-7xl mb-8">🏛️</div>
+                    <blockquote class="text-2xl md:text-4xl font-extrabold text-slate-800 leading-relaxed mb-8 italic">
+                        「我不是發生在我身上的事，<br>我是我選擇成為的人。」
+                    </blockquote>
+                    <p class="text-slate-700 text-xl mb-10 leading-relaxed font-medium">
+                        卡爾·榮格 (Carl Jung) 發明心理類型的初衷，從來不是為了把人貼上標籤。「<strong class="text-indigo-700">個體化 (Individuation)</strong>」才是心理學的終極目的。
+                    </p>
+                    <div class="bg-white/80 backdrop-blur p-8 rounded-3xl border border-slate-200 shadow-md text-left">
+                        <p class="text-slate-700 text-lg leading-relaxed">
+                            MBTI 只是你的起點——那是你童年為了適應環境、保護自己而發展出的防禦武器。人生的下半場，你的任務是「擁抱你的陰影」。當你能自如調動那 8 個深藏在大腦中的功能，不再排斥自己的弱點與原罪時，你就不再受限於任何四個字母的牢籠，而是一個完整、自由且強大的靈魂。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 4: 16型常模 -->
+        <section class="transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-10">
+                <h2 class="text-2xl font-extrabold text-slate-800 mb-4 text-center">📊 16型人格平均雷達圖常模總覽</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6" id="all16ChartsContainer"></div>
+                <div class="mt-8 h-64 w-full">
+                    <h3 class="text-center font-bold text-slate-700 mb-2">💰 相對薪資發展指數</h3>
+                    <canvas id="salaryBarChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- 區塊 5: MBTI 起源與職業商業應用 -->
+        <section class="mb-12 transition-all duration-500">
+            <div class="bg-gradient-to-r from-slate-50 to-indigo-50/30 rounded-3xl shadow-lg border border-slate-200 p-8 md:p-12">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center mb-10">📖 MBTI 核心觀念與商業價值</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-700 mb-4 flex items-center">
+                                <span class="bg-indigo-100 p-2 rounded-lg mr-3 shadow-sm">🏛️</span> 起源與現代心理學定位
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-lg mb-4">
+                                MBTI (邁爾斯-布里格斯類型指標) 並非單純的性格測驗，而是基於瑞士心理學巨擘 <strong>Carl Jung (榮格)</strong> 在 1921 年發表的《心理類型》著作。
+                            </p>
+                            <p class="text-slate-600 leading-relaxed text-sm">
+                                榮格認為人類的意識運作並非隨機，而是有跡可循的「功能排序」。後由 Katharine Cook Briggs 與其女兒 Isabel Briggs Myers 用其一生將理論實體化，旨在幫助人們理解差異，減少戰後的誤解與衝突。雖然在學術界（如大五人格）有爭議，但在<strong>財富 500 強企業</strong>中，超過 80% 使用其作為團隊建設、領導力開發與溝通優化的核心工具。
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-rose-700 mb-4 flex items-center">
+                                <span class="bg-rose-100 p-2 rounded-lg mr-3 shadow-sm">💼</span> 商業與職業發展價值
+                            </h3>
+                            <p class="text-slate-600 leading-relaxed text-lg mb-4">
+                                在現代職場，MBTI 被視為一種<strong>「認知多樣性」的管理語言</strong>。它不定義能力高低，而是揭示了你的「精力來源、資訊處理方式、決策依據與生活態度」。
+                            </p>
+                            <ul class="space-y-3 mt-4">
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 font-bold">✓</span>
+                                    <span class="text-slate-600 text-sm"><strong>精準選才：</strong> 預測候選人在高壓下的決策模式與團隊化學反應。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 font-bold">✓</span>
+                                    <span class="text-slate-600 text-sm"><strong>衝突管理：</strong> 理解 Te (效率) 與 Fi (價值) 的衝突本質，將對立轉化為互補。</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-2 font-bold">✓</span>
+                                    <span class="text-slate-600 text-sm"><strong>領導力教練：</strong> 協助管理者覺察自己的「盲點功能」(Blindspot)，避免決策偏誤。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <h4 class="text-lg font-bold text-slate-700 mb-4 text-center">榮格八維功能簡表 (The Cognitive Functions)</h4>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Se</div>
+                                <div class="text-xs text-slate-500">外傾感覺</div>
+                                <div class="text-[10px] text-slate-400 mt-1">活在當下</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Si</div>
+                                <div class="text-xs text-slate-500">內傾感覺</div>
+                                <div class="text-[10px] text-slate-400 mt-1">數據經驗</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Ne</div>
+                                <div class="text-xs text-slate-500">外傾直覺</div>
+                                <div class="text-[10px] text-slate-400 mt-1">發散創意</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Ni</div>
+                                <div class="text-xs text-slate-500">內傾直覺</div>
+                                <div class="text-[10px] text-slate-400 mt-1">收斂洞察</div>
+                            </div>
+                             <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Te</div>
+                                <div class="text-xs text-slate-500">外傾思維</div>
+                                <div class="text-[10px] text-slate-400 mt-1">高效執行</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Ti</div>
+                                <div class="text-xs text-slate-500">內傾思維</div>
+                                <div class="text-[10px] text-slate-400 mt-1">邏輯除錯</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Fe</div>
+                                <div class="text-xs text-slate-500">外傾情感</div>
+                                <div class="text-[10px] text-slate-400 mt-1">人際和諧</div>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
+                                <div class="font-black text-slate-800 text-xl mb-1">Fi</div>
+                                <div class="text-xs text-slate-500">內傾情感</div>
+                                <div class="text-[10px] text-slate-400 mt-1">核心價值</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊 6: 新手完整學習總集 -->
+        <section class="mb-12 transition-all duration-500">
+            <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center mb-4">🎓 MBTI 新手完整學習總集（最終版）</h2>
+                <p class="text-center text-slate-600 max-w-4xl mx-auto mb-10 text-lg">這一區專門給第一次接觸 MBTI 的你：先看 16 型人格精準敘述，再看各國文化中的 MBTI 代表型，最後讀懂 Myers-Briggs 母女如何把理論變成全球通用語言。</p>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-6 flex items-center"><span class="text-3xl mr-3">🧬</span>16 型人格逐型敘述（核心特質 / 優勢 / 盲點）</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-gradient-to-b from-indigo-50 to-white p-4 rounded-2xl border border-indigo-200"><h4 class="font-black text-indigo-700 mb-2">INTJ 建築師</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：長線戰略與系統重構。優勢：能在混亂中找出最優路徑。盲點：對低效率與情緒化回應耐受度低。</p></div>
+                        <div class="bg-gradient-to-b from-blue-50 to-white p-4 rounded-2xl border border-blue-200"><h4 class="font-black text-blue-700 mb-2">INTP 邏輯學家</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：概念推演與模型思維。優勢：能拆解複雜問題到原理層。盲點：執行節奏容易被完美主義拖慢。</p></div>
+                        <div class="bg-gradient-to-b from-violet-50 to-white p-4 rounded-2xl border border-violet-200"><h4 class="font-black text-violet-700 mb-2">ENTJ 指揮官</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：目標導向與資源調度。優勢：快速決策、推進結果。盲點：可能忽略團隊情感與節奏差異。</p></div>
+                        <div class="bg-gradient-to-b from-fuchsia-50 to-white p-4 rounded-2xl border border-fuchsia-200"><h4 class="font-black text-fuchsia-700 mb-2">ENTP 辯論家</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：創新點子與破框提問。優勢：擅長看到替代方案。盲點：收尾與持續性需要結構化支持。</p></div>
+
+                        <div class="bg-gradient-to-b from-emerald-50 to-white p-4 rounded-2xl border border-emerald-200"><h4 class="font-black text-emerald-700 mb-2">INFJ 提倡者</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：洞察人心與價值願景。優勢：能把抽象理想落成可實踐方向。盲點：對他人情緒負荷過高時會內耗。</p></div>
+                        <div class="bg-gradient-to-b from-teal-50 to-white p-4 rounded-2xl border border-teal-200"><h4 class="font-black text-teal-700 mb-2">INFP 調停者</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：價值一致性與真誠感。優勢：同理深、創作力高。盲點：在高壓現實中可能回避外部衝突。</p></div>
+                        <div class="bg-gradient-to-b from-green-50 to-white p-4 rounded-2xl border border-green-200"><h4 class="font-black text-green-700 mb-2">ENFJ 主人公</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：群體凝聚與動機喚醒。優勢：帶動團隊、激發成長。盲點：過度承擔他人課題造成耗竭。</p></div>
+                        <div class="bg-gradient-to-b from-lime-50 to-white p-4 rounded-2xl border border-lime-200"><h4 class="font-black text-lime-700 mb-2">ENFP 競選者</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：熱情連結與機會發現。優勢：創意動能強、感染力高。盲點：專注力需靠節奏管理維持。</p></div>
+
+                        <div class="bg-gradient-to-b from-sky-50 to-white p-4 rounded-2xl border border-sky-200"><h4 class="font-black text-sky-700 mb-2">ISTJ 物流師</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：規範、流程、可靠。優勢：穩定執行與風險控管。盲點：面對高不確定創新情境可能偏保守。</p></div>
+                        <div class="bg-gradient-to-b from-cyan-50 to-white p-4 rounded-2xl border border-cyan-200"><h4 class="font-black text-cyan-700 mb-2">ISFJ 守衛者</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：責任感與照護承諾。優勢：細節記憶強、支持力高。盲點：容易壓抑自我需求。</p></div>
+                        <div class="bg-gradient-to-b from-blue-50 to-white p-4 rounded-2xl border border-blue-200"><h4 class="font-black text-blue-700 mb-2">ESTJ 總經理</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：秩序建立與績效導向。優勢：把標準轉成行動。盲點：對模糊與非線性過程容忍度低。</p></div>
+                        <div class="bg-gradient-to-b from-indigo-50 to-white p-4 rounded-2xl border border-indigo-200"><h4 class="font-black text-indigo-700 mb-2">ESFJ 執政官</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：社群協作與關係維護。優勢：人際協調、執行細膩。盲點：過度追求共識時難以拒絕。</p></div>
+
+                        <div class="bg-gradient-to-b from-amber-50 to-white p-4 rounded-2xl border border-amber-200"><h4 class="font-black text-amber-700 mb-2">ISTP 鑑賞家</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：動手實作與即時排錯。優勢：危機應變與技術直覺強。盲點：情感表達常被誤解為冷淡。</p></div>
+                        <div class="bg-gradient-to-b from-yellow-50 to-white p-4 rounded-2xl border border-yellow-200"><h4 class="font-black text-yellow-700 mb-2">ISFP 探險家</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：審美感受與價值忠誠。優勢：真誠、細膩、創作感高。盲點：對僵化制度適配較辛苦。</p></div>
+                        <div class="bg-gradient-to-b from-orange-50 to-white p-4 rounded-2xl border border-orange-200"><h4 class="font-black text-orange-700 mb-2">ESTP 企業家</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：行動速度與場域掌控。優勢：談判與臨場決策強。盲點：忽略長期風險時易衝動擴張。</p></div>
+                        <div class="bg-gradient-to-b from-rose-50 to-white p-4 rounded-2xl border border-rose-200"><h4 class="font-black text-rose-700 mb-2">ESFP 表演者</h4><p class="text-slate-700 text-sm leading-relaxed">核心特質：即時互動與情境感染。優勢：帶動氣氛、善於連結人群。盲點：長期規劃需借助外部結構。</p></div>
+                    </div>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-6 flex items-center"><span class="text-3xl mr-3">🌍</span>不同國家的 MBTI 代表型（文化趨勢示意）</h3>
+                    <p class="text-slate-600 mb-5">說明：以下是「文化傾向」學習用示意，幫助新手理解社會結構如何偏好不同認知風格，並非對個人做絕對判定。</p>
+                    <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-sm border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800 text-white">
+                                    <th class="p-4 text-left font-bold">國家 / 地區</th>
+                                    <th class="p-4 text-left font-bold">常見代表 MBTI 傾向</th>
+                                    <th class="p-4 text-left font-bold">外顯特質</th>
+                                    <th class="p-4 text-left font-bold">形成原因（教育 / 產業 / 文化）</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">美國</td><td class="p-4">ENTP / ENTJ / ESTJ</td><td class="p-4">競爭、創新、結果導向</td><td class="p-4">創業文化強、個人主義高、資本市場鼓勵冒險與表達。</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">日本</td><td class="p-4">ISTJ / ISFJ / INTJ</td><td class="p-4">精準、紀律、品質控管</td><td class="p-4">工藝精神與流程標準化高，組織責任倫理強。</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">德國</td><td class="p-4">ISTJ / INTJ / ESTJ</td><td class="p-4">系統、工程、規範意識</td><td class="p-4">製造業與工程導向，重視長期計畫與制度一致性。</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">韓國</td><td class="p-4">ENFJ / ESTJ / ISFJ</td><td class="p-4">團隊、責任、社會角色感</td><td class="p-4">高密度競爭教育與群體文化，重視協作與績效。</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">台灣</td><td class="p-4">ISFJ / ESFJ / ENFP</td><td class="p-4">彈性、人情協調、實用</td><td class="p-4">中小企業文化強，關係導向與解題彈性並存。</td></tr>
+                                <tr class="border-b border-slate-100 hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">新加坡</td><td class="p-4">ESTJ / ENTJ / ISTJ</td><td class="p-4">效率、治理、標準化</td><td class="p-4">高效行政體系與國際商業樞紐環境，重視可衡量績效。</td></tr>
+                                <tr class="hover:bg-slate-50"><td class="p-4 font-semibold text-slate-800">北歐（綜合）</td><td class="p-4">INFJ / INFP / ENFP</td><td class="p-4">平權、反思、社會信任</td><td class="p-4">福利制度與高信任社會，鼓勵內在價值與公共倫理對話。</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-5 flex items-center"><span class="text-3xl mr-3">👩‍👧</span>MBTI 發明者母女小故事：Myers-Briggs 的誕生</h3>
+                    <div class="bg-gradient-to-r from-indigo-50 via-white to-rose-50 border border-slate-200 rounded-2xl p-6 md:p-8 space-y-4">
+                        <p class="text-slate-700 leading-relaxed text-lg">很多人以為 MBTI 是某個學院派實驗室突然做出來的量表，但它背後其實是一段非常人性、非常「家庭合作」的故事：<strong class="text-indigo-700">Katherine Cook Briggs（母親）</strong>與<strong class="text-rose-700">Isabel Briggs Myers（女兒）</strong>，兩代女性把榮格理論變成了可以真正幫助一般人的工具。</p>
+                        <p class="text-slate-700 leading-relaxed">Katherine 早年接受過農業與自然科學相關訓練，習慣用「分類、觀察、比對」去理解世界；這種方法後來直接影響她研究人格差異時的思路。她相信人與人不是好壞，而是「運作方式不同」。</p>
+                        <p class="text-slate-700 leading-relaxed">女兒 Isabel Briggs Myers 則同時具備文字敘事與心理觀察能力，她曾創作懸疑小說，擅長從人物動機推理行為差異。二戰期間，她看到大量人被迫進入不適配的工作，於是下定決心把人格理論做成可用的問卷，幫助人找到更適配的位置。</p>
+                        <p class="text-slate-700 leading-relaxed">也就是說，MBTI 的核心不是貼標籤，而是讓每個人更快理解自己、理解他人，並在關係、學習與職涯中做出更不內耗的選擇。這也是 Myers-Briggs 母女留給後世最重要的精神遺產。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-slate-900 text-white rounded-3xl p-8 md:p-12 text-center md:text-left shadow-2xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div>
+                    <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-indigo-400">Systematic MBTI Analyzer</h2>
+                    <p class="text-slate-400 text-sm mt-2 max-w-md">「個體化」是心理學的終極目的。擁抱你的陰影，整合你的八維，成為完整真實的人。</p>
+                </div>
+                <div class="flex gap-4">
+                     <a href="https://github.com/elain/mbti" target="_blank" class="text-slate-400 hover:text-white transition-colors" aria-label="Github Repo">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                     </a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>Based on Jungian Cognitive Functions & Enneagram Institute Theories.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
