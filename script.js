@@ -474,7 +474,7 @@ window.myCustomChart = null;
 function clearInputs(userPrefix) {
     scoreKeys.forEach((key) => {
         const el = document.getElementById(`${userPrefix}${key}`);
-        if (el) el.value = defaultScore;
+        if (el) el.value = 0;
     });
 
     drawCustomRadar();
