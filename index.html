@@ -315,19 +315,56 @@
 
                         <!-- MBTI 核心功能深度解析 -->
                         <div class="space-y-4">
-                            <h3 class="text-2xl font-bold text-indigo-300 mb-4 border-b border-slate-700 pb-3">🧠 MBTI 核心功能深度解析</h3>
+                            <h3 class="text-2xl font-bold text-indigo-300 mb-4 border-b border-slate-700 pb-3">🧠 MBTI 核心功能深度解析 <span class="text-base font-normal text-slate-400 ml-2">(已依照您的 MBTI 排列榮格八維)</span></h3>
+                            <p class="text-rose-400 font-bold text-sm mb-4 bg-rose-950/30 p-3 rounded-lg border border-rose-500/20">⚠️ 註：即使是同一個 MBTI，高階與低階狀態看起來會截然不同。高階者可能已經發展好阿尼瑪、小丑甚至惡魔功能，展現出完整的個體化特質。</p>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
                                     <div class="text-rose-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥇</span> 第 1 位：主導本能 (Hero)</div>
                                     <p class="text-sm text-slate-300 leading-relaxed" id="descHero"></p>
                                 </div>
                                 <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
-                                    <div class="text-blue-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥈</span> 第 2 位：理性煞車 (Parent)</div>
+                                    <div class="text-blue-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥈</span> 第 2 位：父母 (Parent)</div>
+                                    <p class="text-sm text-slate-300 leading-relaxed mb-3"><strong>本質：</strong>這是一個你渴望成為、敬仰的成熟特質。用來「煞車」並平衡衝動的主導功能。</p>
                                     <p class="text-sm text-slate-300 leading-relaxed" id="descParent"></p>
                                 </div>
                                 <div class="bg-slate-800/60 p-5 rounded-xl border border-slate-700 shadow-md hover:bg-slate-800 transition-colors">
-                                    <div class="text-emerald-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥉</span> 第 3 位：純真樂泉 (Child)</div>
+                                    <div class="text-emerald-400 font-bold text-lg mb-2 flex items-center"><span class="mr-2">🥉</span> 第 3 位：永恆少年 (Child)</div>
+                                    <p class="text-sm text-slate-300 leading-relaxed mb-3"><strong>本質：</strong>它如左手般不靈活，偶爾會犯錯與笨拙，但也是你受傷時的避風港、玩樂放鬆的來源。</p>
                                     <p class="text-sm text-slate-300 leading-relaxed" id="descChild"></p>
+                                    <div class="mt-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 backdrop-blur-sm">
+                                        <details class="group">
+                                            <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-slate-300 hover:text-white transition-colors">
+                                                <span class="flex items-center"><span class="mr-2">💡</span> 關於性格變動與 -A/-T 子類型說明</span>
+                                                <span class="transition group-open:rotate-180">
+                                                    <svg fill="none" class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                                </span>
+                                            </summary>
+                                            <div class="text-slate-400 mt-4 group-open:animate-fadeIn text-sm space-y-3 leading-relaxed border-t border-slate-700/50 pt-3">
+                                                <p><strong class="text-indigo-300">Assertive (-A) 堅決型：</strong> 情緒穩定，較有自信，較不在意他人看法。即使遇到壓力也能保持冷靜。</p>
+                                                <p><strong class="text-indigo-300">Turbulent (-T) 動盪型：</strong> 完美主義，情緒起伏大，容易焦慮但也更有上進心。經常自我反省並渴望變得更好。</p>
+                                                <hr class="border-slate-700/50 my-2">
+                                                <p><strong class="text-amber-300">性格會變嗎？</strong> 榮格認為核心性格類型（大腦原廠設定）通常不會改變。但隨著年齡增長與社會化，你會發展出原本不擅長的弱勢功能（例如老年的 <span class="font-mono text-xs bg-slate-700 px-1 rounded">Thinking (T)</span> 人會變得比較慈祥、感性），這稱為<strong>「人格整合 (Individuation)」</strong>。這不代表你的類型變了，而是你變得更完整了。</p>
+                                            </div>
+                                        </details>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 官方配對與迷因解析 (新加入) -->
+                        <div class="bg-gradient-to-r from-violet-900/50 to-fuchsia-900/50 p-6 rounded-2xl border border-violet-500/30 relative overflow-hidden group">
+                            <div class="absolute -right-10 -top-10 w-40 h-40 bg-violet-500 rounded-full blur-3xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                            <h3 class="text-xl font-bold text-violet-300 mb-4 flex items-center relative z-10">
+                                <span class="text-2xl mr-2">💞</span> 官方配對 (CP) 與網路迷因
+                            </h3>
+                            <div class="flex flex-col md:flex-row gap-6 relative z-10">
+                                <div class="flex-shrink-0 flex flex-col items-center justify-center bg-black/20 rounded-xl p-4 min-w-[120px]">
+                                    <span class="text-xs text-violet-400 font-bold mb-1 uppercase tracking-widest">Best Match</span>
+                                    <div class="text-3xl font-black text-white" id="cpMatchName">--</div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-fuchsia-300 mb-2" id="cpTitle">--</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed" id="cpDesc">--</p>
                                 </div>
                             </div>
                         </div>
@@ -468,7 +505,7 @@
                                     <p class="text-sm font-bold text-blue-600 mt-1" id="arch-2-func">--</p>
                                 </div>
                             </div>
-                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-blue-800">本質：</strong>輔助與責任的化身。用來「煞車」並平衡衝動的主導功能。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-blue-800">本質：</strong>輔助與責任的化身。這是你渴望成為、敬仰的成熟特質，用來「煞車」並平衡衝動的主導功能。</p>
                             <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-blue-800">健康狀態：</strong>帶有成熟、照顧與保護的特質。你用這個功能來教育他人、給予建議，並讓自己與外界和諧接軌。</p>
                             <div class="bg-blue-100 border border-blue-300 p-4 rounded-xl">
                                 <p class="text-blue-800 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>如果發展不良，可能會變成過度說教、干涉別人，或是用一種「我是為你好」的居高臨下態度來壓迫他人。</p>
@@ -482,7 +519,7 @@
                                     <p class="text-sm font-bold text-emerald-600 mt-1" id="arch-3-func">--</p>
                                 </div>
                             </div>
-                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-emerald-800">本質：</strong>玩樂、放鬆與純真的所在。這是你受傷時的避風港。</p>
+                            <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-emerald-800">本質：</strong>玩樂、放鬆與純真的所在。它如左手般不靈活，偶爾會犯錯與笨拙，但也是你受傷時的避風港。</p>
                             <p class="text-slate-700 mb-3 leading-relaxed"><strong class="text-emerald-800">健康狀態：</strong>帶來無窮的創造力、幽默感與活力。當你使用這個功能時，你會感到非常開心且沒有壓力。</p>
                             <div class="bg-emerald-100 border border-emerald-300 p-4 rounded-xl">
                                 <p class="text-emerald-800 text-sm leading-relaxed"><strong>⚠️ 陰暗面：</strong>容易表現出任性、不負責任與盲目自信。在壓力下，它會和主導功能形成惡性迴圈 (Loop)，讓你變得像個不講理的頑童。</p>

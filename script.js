@@ -112,6 +112,44 @@ const funcArchetypeKeywords = {
     'Fi': '堅守核心信念與真誠感受'
 };
 
+const typeBriefs = {
+    'ENTP': '充滿創意的辯論家，熱衷於挑戰現狀與探索無窮可能性。',
+    'INTP': '冷靜的邏輯學家，渴望理解宇宙萬物的運作原理。',
+    'ENTJ': '果斷的指揮官，為實現宏大願景而高效調度資源。',
+    'INTJ': '深謀遠慮的策畫者，擁有洞察未來的直覺與執行力。',
+    'ENFP': '熱情的啟發者，用創意與同理心點燃他人的潛能。',
+    'INFP': '理想主義的哲學家，守護內心深處的價值與純真。',
+    'ENFJ': '極具魅力的導師，激勵群體成長並維護和諧。',
+    'INFJ': '神秘的洞察者，能看透人心並為人類未來指引方向。',
+    'ESTP': '大膽的創業家，活在當下並享受解決危機的快感。',
+    'ISTP': '冷靜的技術大師，擅長分析問題並動手解決。',
+    'ESTJ': '高效的管理者，致力於建立秩序與傳統。',
+    'ISTJ': '忠誠的守護者，以責任感與細節維護世界運轉。',
+    'ESFP': '天生的表演者，用熱情與活力感染周遭的每一個人。',
+    'ISFP': '溫柔的藝術家，用獨特的審美與行動表達自我。',
+    'ESFJ': '受歡迎的供給者，熱心照顧他人並維護社交和諧。',
+    'ISFJ': '細心的照顧者，以溫暖與奉獻守護所愛之人的安全。'
+};
+
+const cpData = {
+    'ENTP': { match: 'INFJ', name: '🤡 弄臣與聖人組 (The Golden Pair)', desc: '網路上最熱門的迷因 CP。ENTP 的瘋狂腦洞需要 INFJ 的深邃智慧來包容，而 INFJ 的避世需要 ENTP 強行拖出門。你們是彼此的精神嚮導，一個負責發瘋，一個負責看透一切。' },
+    'INTP': { match: 'ENTJ', name: '🤖 征服者與軍師組 (The Power Couple)', desc: 'INTP 提供絕對精確的邏輯藍圖，ENTJ 負責將其暴力執行。這是一對能統治世界或是摧毀世界的組合，感情雖然像 AI 對話般乾澀，但效率與默契無人能敵。' },
+    'ENTJ': { match: 'INTP', name: '👑 霸道總裁與極客組 (The Power Couple)', desc: '雖然 INFP 被認為是經典官配，但其實 ENTJ 往往更欣賞 INTP 的邏輯能力。你們在一起就是「計畫通」，你是負責攻城略地的王，他是你背後最強大的智囊庫。' },
+    'INTJ': { match: 'ENFP', name: '🌈 快樂小狗與飼主組 (The Golden Pair)', desc: '社群網路上最紅的「高冷 X 熱情」組合。ENFP 的彩虹能量能融化 INTJ 的萬年冰山，INTJ 雖然嘴上嫌棄但其實很享受被 ENFP 黏著的感覺。唯一的缺點是可能會太吵。' },
+    'ENFP': { match: 'INTJ', name: '🦄 獨角獸與策士組 (The Golden Pair)', desc: '你是負責在天上飛的氣球，他是負責把你拉住的線。沒有 INTJ，你可能會飄到外太空回不來；沒有你，INTJ 的世界將是一片死寂的黑白。你們是彼此缺失的拼圖。' },
+    'INFP': { match: 'ENTJ', name: '🥺 傲嬌與霸氣組 (The Growth Pair)', desc: '彷彿言情小說的設定。ENTJ 的強勢能給予 INFP 滿滿的安全感與方向，而 INFP 的柔軟與道德深度能軟化 ENTJ 的鋼鐵之心，教會他們什麼是「愛」。' },
+    'ENFJ': { match: 'INFP', name: '🌻 溫柔救贖組 (The Soulmates)', desc: '兩個人都太過在乎別人的感受，在一起就是互相療癒的過程。ENFJ 喜歡照顧人，而 INFP 渴望被理解，你們的對話可能會充滿了「你還好嗎？」與「我懂你」。' },
+    'INFJ': { match: 'ENTP', name: '🔮 先知與搗蛋鬼組 (The Golden Pair)', desc: '這是一場嚴肅與混亂的完美皆大歡喜。你看透了世俗的虛偽，而 ENTP 喜歡戳破虛偽，你們在精神層面上擁有無人能及的共鳴，儘管外人看起來你們完全不搭。' },
+    'ESTP': { match: 'ISFJ', name: '🏍️ 浪子與管家組 (The Traditional Pair)', desc: 'ESTP 負責在外面衝鋒陷陣、惹是生非，ISFJ 負責在後面收拾殘局並提供溫暖的家。雖然聽起來很刻板，但互補性極強，是最穩定的現實生活搭擋。' },
+    'ISTP': { match: 'ESTJ', name: '🔧 工頭與經理組 (The Pragmatic Pair)', desc: '兩個都不喜歡廢話的實用主義者。ESTJ 發號施令，ISTP 解決技術難題。只要不談論感情（因為兩個都有情緒障礙），你們就是地表最強的解決問題小組。' },
+    'ESTJ': { match: 'ISTP', name: '📊 執行長與技術長組 (The Business Pair)', desc: '你們的結合就像一間運轉良好的公司。你看重結果，他看重效能。雖然 ISTP 偶爾會嫌你太嘮叨，但你也佩服他那精準的手藝。' },
+    'ISTJ': { match: 'ESFP', name: '📋 會計師與明星組 (The Balance Pair)', desc: '你生活在規矩與計劃中，而 ESFP 是你生命中的意外驚喜（或驚嚇）。他能帶你體驗「活著」的感覺，而你提供了他最缺乏的穩定感，雖然你常會被他的隨性氣死。' },
+    'ESFP': { match: 'ISTJ', name: '💃 派對焦點與觀眾組 (The Balance Pair)', desc: '你需要舞台，而 ISTJ 是你最忠實的觀眾（兼經紀人）。他會幫你處理所有無聊的細節，確保你不會因為玩過頭而破產，是你背後最堅實的依靠。' },
+    'ISFP': { match: 'ESFJ', name: '🎨 藝術家與經紀人組 (The Care Pair)', desc: '你負責創作與感受，ESFJ 負責幫你打理人際關係與生活瑣事。他會無微不至地照顧你，而你獨特的美感也能為他的生活帶來色彩。' },
+    'ESFJ': { match: 'ISFP', name: '🏠 媽媽與叛逆小孩組 (The Comfort Pair)', desc: '你有強烈的保護慾，而 ISFP 剛好展現出一種令人想照顧的脆弱感。雖然 ISFP 有時候需要大量獨處空間會讓你感到受傷，但你們的關係充滿了溫馨與美感。' },
+    'ISFJ': { match: 'ESTP', name: '🛡️ 守護者與冒險家組 (The Anchor Pair)', desc: '你嚮往他的自由與大膽，他依賴你的溫柔與細心。你是風箏線，他是風箏。只要有你在，他飛得再遠都知道回家的路。' }
+};
+
 const relationsDB = {
     'ENTP': { dual: 'INFJ', mirror: 'INTP', conflict: 'ISFP' }, 'INTP': { dual: 'ENFJ', mirror: 'ENTP', conflict: 'ESFP' },
     'ENTJ': { dual: 'INFP', mirror: 'INTJ', conflict: 'ISFJ' }, 'INTJ': { dual: 'ENFP', mirror: 'ENTJ', conflict: 'ESFJ' },
@@ -361,7 +399,11 @@ function updateAnalyzer() {
                 </div>
                 <div class="text-3xl font-black text-white mb-1 tracking-tight">${s.mbti}</div>
                 <div class="text-[10px] text-slate-400 font-mono mb-3 uppercase tracking-widest">${typeInfo[s.mbti].name.split(' ')[1]}</div>
-                <p class="text-xs text-slate-300 leading-relaxed font-medium opacity-90">${s.desc.text}</p>
+                <p class="text-xs text-slate-300 leading-relaxed font-medium opacity-90 mb-2">${s.desc.text}</p>
+                <div class="bg-slate-700/50 p-3 rounded-lg border border-slate-600/30">
+                    <span class="text-[10px] text-slate-400 block mb-1 uppercase tracking-wider">Mode: ${s.mbti}</span>
+                    <p class="text-xs text-white leading-relaxed font-bold">${typeBriefs[s.mbti]}</p>
+                </div>
             </div>`;
         });
     }
@@ -383,6 +425,14 @@ function updateAnalyzer() {
     document.getElementById('guideInfTitle').innerText = `第 4 位：${funcs[3]} (劣勢位)`; document.getElementById('guideInfText').innerHTML = adviceGuides.Inferior[funcs[3]];
     document.getElementById('guideTriTitle').innerText = `第 7 位：${fullStack[6]} (小丑位)`; document.getElementById('guideTriText').innerHTML = adviceGuides.Trickster[fullStack[6]];
     document.getElementById('guideDemTitle').innerText = `第 8 位：${fullStack[7]} (惡魔位)`; document.getElementById('guideDemText').innerHTML = adviceGuides.Demon[fullStack[7]];
+
+    // CP & Memes Update
+    const cp = cpData[mbti];
+    if(cp) {
+        document.getElementById('cpMatchName').innerHTML = `<span class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-br from-violet-200 to-fuchsia-200">${cp.match}</span>`;
+        document.getElementById('cpTitle').innerText = cp.name;
+        document.getElementById('cpDesc').innerText = cp.desc;
+    }
 
     // 🔥 終極個人化報告字串生成 (Synthesis)
     let reportHTML = `<p><strong>【大腦原廠設定】</strong> 你是屬於 <span class="${col.css} px-2 py-0.5 rounded font-bold">${col.name}</span> 家族的 <strong>${mbti}</strong>。你的大腦主要依賴 <span class="text-rose-400 font-bold">${funcs[0]} (${funcNames[funcs[0]]})</span> 作為探索世界與解決問題的最強引擎，並用 <span class="text-blue-400 font-bold">${funcs[1]}</span> 來保持理智的煞車與平衡。</p>`;
