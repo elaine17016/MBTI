@@ -715,14 +715,14 @@
                         </div>
                     </div>
                     <div class="text-center mt-6 space-y-2">
-                        <p class="text-slate-300 text-sm">👉 解離路徑可讀作：1→4→2→8→5→7→1，以及 9→6→3→9。</p>
-                        <p class="text-slate-300 text-sm">🔄 整合路徑為反向位移，例如：1→7、9→3。</p>
+                        <p class="text-slate-600 font-medium text-sm">👉 解離路徑可讀作：1→4→2→8→5→7→1，以及 9→6→3→9。</p>
+                        <p class="text-slate-600 font-medium text-sm">🔄 整合路徑為反向位移，例如：1→7、9→3。</p>
                     </div>
                 </div>
 
                 <!-- 1+1: 九型人格深度詳解卡片區 (新增) -->
-                <div>
-                    <h3 class="text-2xl font-extrabold text-slate-800 mb-6 flex items-center"><span class="text-3xl mr-3">🧘</span>九型人格深度人格畫像</h3>
+                <div class="max-w-7xl mx-auto px-4 md:px-0">
+                    <h3 class="text-2xl font-extrabold text-slate-800 mb-6 flex items-center md:pl-2"><span class="text-3xl mr-3">🧘</span>九型人格深度人格畫像</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         
                         <!-- 1號 -->
@@ -1147,30 +1147,25 @@
                     </div>
                 </div>
 
-                <div class="mt-8 bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10 group">
-                    <details class="group">
-                        <summary class="flex justify-between items-center font-bold cursor-pointer list-none text-indigo-300 hover:text-white transition-colors text-lg">
-                            <span class="flex items-center"><span class="mr-2">💡</span> 補充知識：什麼是 -A/-T 子類型？性格會變嗎？</span>
-                            <span class="transition group-open:rotate-180">
-                                <svg fill="none" class="w-4 h-4" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                            </span>
-                        </summary>
-                        <div class="text-slate-300 mt-4 group-open:animate-fadeIn text-sm space-y-4 leading-relaxed border-t border-white/10 pt-4">
-                            <div>
-                                <strong class="text-indigo-300 text-base block mb-1">Assertive (-A) 堅決型：</strong>
-                                <p>情緒穩定，較有自信，較不在意他人看法。即使遇到壓力也能保持冷靜，但有時可能顯得對變局反應不夠敏銳。</p>
-                            </div>
-                            <div>
-                                <strong class="text-indigo-300 text-base block mb-1">Turbulent (-T) 動盪型：</strong>
-                                <p>完美主義，情緒起伏大，容易焦慮但也更有上進心。經常自我反省並渴望變得更好，對細節與風險更為敏感。</p>
-                            </div>
-                            <hr class="border-white/10 my-2">
-                            <div>
-                                <strong class="text-amber-300 text-base block mb-1">性格會變嗎？</strong>
-                                <p>榮格認為核心性格類型（大腦原廠設定）通常不會改變。但隨著年齡增長與社會化，你會發展出原本不擅長的功能（例如老年的 <span class="font-mono text-xs bg-slate-700/50 px-1 rounded">Thinking (T)</span> 人會變得比較慈祥、感性），這稱為<strong>「人格整合 (Individuation)」</strong>。這不代表你的類型變了，而是你變得更完整了。</p>
-                            </div>
+                <div class="mt-8 bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                    <h3 class="flex items-center font-bold text-indigo-300 text-lg mb-4">
+                        <span class="mr-2">💡</span> 補充知識：什麼是 -A/-T 子類型？性格會變嗎？
+                    </h3>
+                    <div class="text-slate-300 text-sm space-y-4 leading-relaxed">
+                        <div>
+                            <strong class="text-indigo-300 text-base block mb-1">Assertive (-A) 堅決型：</strong>
+                            <p>情緒穩定，較有自信，較不在意他人看法。即使遇到壓力也能保持冷靜，但有時可能顯得對變局反應不夠敏銳。</p>
                         </div>
-                    </details>
+                        <div>
+                            <strong class="text-indigo-300 text-base block mb-1">Turbulent (-T) 動盪型：</strong>
+                            <p>完美主義，情緒起伏大，容易焦慮但也更有上進心。經常自我反省並渴望變得更好，對細節與風險更為敏感。</p>
+                        </div>
+                        <hr class="border-white/10 my-2">
+                        <div>
+                            <strong class="text-amber-300 text-base block mb-1">性格會變嗎？</strong>
+                            <p>榮格認為核心性格類型（大腦原廠設定）通常不會改變。但隨著年齡增長與社會化，你會發展出原本不擅長的功能（例如老年的 <span class="font-mono text-xs bg-slate-700/50 px-1 rounded">Thinking (T)</span> 人會變得比較慈祥、感性），這稱為<strong>「人格整合 (Individuation)」</strong>。這不代表你的類型變了，而是你變得更完整了。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1202,9 +1197,27 @@
             <div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-10">
                 <h2 class="text-2xl font-extrabold text-slate-800 mb-4 text-center">📊 16型人格平均雷達圖常模總覽</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 mt-6" id="all16ChartsContainer"></div>
-                <div class="mt-8 h-64 w-full">
-                    <h3 class="text-center font-bold text-slate-700 mb-2">💰 16 型人格收入排名 (平均年薪相對指數)</h3>
-                    <canvas id="salaryBarChart"></canvas>
+                <div class="mt-8 w-full border-t border-slate-200 pt-8">
+                    <h3 class="text-center font-bold text-slate-700 mb-6 flex items-center justify-center">
+                        <span class="text-2xl mr-2">💹</span> 16 型人格完整統計：薪資指數 / 人口占比 / 男女占比 (依照薪資指數由大到小排列)
+                    </h3>
+                    <div id="statsTableContainer" class="overflow-x-auto rounded-xl shadow-sm border border-slate-200">
+                        <table class="w-full text-sm text-left border-collapse">
+                            <thead class="bg-slate-100 text-slate-700 uppercase font-bold text-xs">
+                                <tr>
+                                    <th class="px-6 py-3">人格類型</th>
+                                    <th class="px-6 py-3">薪資指數 (平均=100)</th>
+                                    <th class="px-6 py-3">人口占比 (預估)</th>
+                                    <th class="px-6 py-3">男性占比</th>
+                                    <th class="px-6 py-3">女性占比</th>
+                                </tr>
+                            </thead>
+                            <tbody id="statsTableBody" class="divide-y divide-slate-100 bg-white">
+                                <!-- JS Generated Rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-slate-400 text-center mt-3">數據來源：綜合 Truity, 16Personalities 與相關心理學統計資料 (僅供參考)</p>
                 </div>
             </div>
         </section>

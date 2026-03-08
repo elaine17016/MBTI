@@ -519,7 +519,7 @@ function drawCustomRadar() {
     window.myCustomChart = new Chart(ctx, { type: 'radar', data: { labels: radarLabels, datasets: datasets }, options: { ...radarOptions, plugins: { legend: { position: 'bottom' } } } });
 }
 
-// 16型小圖表生成 & 薪資圖 (Initialization)
+// 16型小圖表生成 & 完整統計表格 (Initialization)
 function initCharts() {
     const container16 = document.getElementById('all16ChartsContainer');
     if(!container16) return;
@@ -544,10 +544,51 @@ function initCharts() {
         cIdx++;
     }
 
-    const salaryCtx = document.getElementById('salaryBarChart');
-    if(salaryCtx) {
-        new Chart(salaryCtx, { type: 'bar', data: { labels: ['ENTJ', 'ESTJ', 'ENTP', 'INTJ', 'ESTP', '平均', 'INFP'], datasets: [{ label: '相對薪資', data: [145, 138, 125, 122, 118, 100, 85], backgroundColor: ['#fb7185', '#fb7185', '#818cf8', '#818cf8', '#94a3b8', '#e2e8f0', '#34d399'], borderRadius: 4 }]}, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } } });
-    }
+    renderStatsTable();
+}
+
+function renderStatsTable() {
+    const tbody = document.getElementById('statsTableBody');
+    if(!tbody) return;
+
+    // Data source: Truity & 16Personalities aggregated stats (Approximate)
+    // Sorted by Average Annual Income (High to Low)
+    const statsData = [
+        { type: 'ENTJ', name: '陸軍元帥', salary: 145, pop: '1.8%', m: '2.7%', f: '0.9%' },
+        { type: 'ESTJ', name: '總經理', salary: 138, pop: '8.7%', m: '11.2%', f: '6.3%' },
+        { type: 'ENTP', name: '發明家', salary: 125, pop: '3.2%', m: '4.0%', f: '2.4%' },
+        { type: 'ESTP', name: '創業者', salary: 118, pop: '4.3%', m: '5.6%', f: '3.0%' },
+        { type: 'ISTJ', name: '物流師', salary: 115, pop: '11.6%', m: '16.4%', f: '6.9%' },
+        { type: 'ESFJ', name: '執政官', salary: 112, pop: '12.3%', m: '7.5%', f: '16.9%' },
+        { type: 'ENFJ', name: '主人公', salary: 110, pop: '2.5%', m: '1.6%', f: '3.3%' },
+        { type: 'INTJ', name: '建築師', salary: 108, pop: '2.1%', m: '3.3%', f: '0.8%' },
+        { type: 'INFJ', name: '提倡者', salary: 102, pop: '1.5%', m: '1.3%', f: '1.6%' },
+        { type: 'ESFP', name: '表演者', salary: 101, pop: '8.5%', m: '6.9%', f: '10.1%' },
+        { type: 'ISTP', name: '鑑賞家', salary: 98, pop: '5.4%', m: '8.5%', f: '2.3%' },
+        { type: 'ISFJ', name: '守衛者', salary: 95, pop: '13.8%', m: '8.1%', f: '19.4%' },
+        { type: 'INTP', name: '邏輯學家', salary: 92, pop: '3.3%', m: '4.8%', f: '1.7%' },
+        { type: 'ENFP', name: '競選者', salary: 90, pop: '8.1%', m: '6.4%', f: '9.7%' },
+        { type: 'ISFP', name: '探險家', salary: 88, pop: '8.8%', m: '7.6%', f: '9.9%' },
+        { type: 'INFP', name: '調停者', salary: 85, pop: '4.4%', m: '4.1%', f: '4.6%' }
+    ];
+
+    tbody.innerHTML = statsData.map((item, index) => {
+        let salaryColor = 'text-slate-600';
+        if(index < 3) salaryColor = 'text-rose-600'; // Top 3
+        else if(index > 12) salaryColor = 'text-emerald-600'; // Bottom 3
+
+        return `
+        <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+            <td class="px-6 py-4 font-bold text-slate-800 flex items-center">
+                <span class="w-12">${item.type}</span>
+                <span class="text-xs font-normal text-slate-400 ml-2 hidden sm:inline-block">(${item.name})</span>
+            </td>
+            <td class="px-6 py-4 font-bold ${salaryColor}">${item.salary}</td>
+            <td class="px-6 py-4 text-slate-600">${item.pop}</td>
+            <td class="px-6 py-4 text-blue-500 font-medium">${item.m}</td>
+            <td class="px-6 py-4 text-rose-500 font-medium">${item.f}</td>
+        </tr>`;
+    }).join('');
 }
 
 function initSystem() {
