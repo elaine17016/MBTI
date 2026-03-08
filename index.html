@@ -141,6 +141,91 @@
             </div>
         </header>
 
+        <!-- 測前準備區塊 -->
+        <section id="pre-test-section" class="max-w-5xl mx-auto px-4 relative z-20">
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-slate-200 shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-rose-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+                
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center">
+                    <span class="bg-indigo-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-3 text-sm shadow-md">1</span>
+                    測前準備：取得你的數據
+                </h2>
+
+                <div class="space-y-6">
+                    <div class="p-4 bg-rose-50 rounded-xl border-l-4 border-rose-500 shadow-sm flex items-start">
+                         <span class="text-2xl mr-3">⚠️</span>
+                         <div>
+                             <p class="text-rose-700 font-bold text-lg mb-1">建議先做測驗 取得數據 再回來這個網頁分析</p>
+                             <p class="text-rose-600/80 text-sm">這樣能獲得最精準的全息解析結果。</p>
+                         </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <a href="https://totypes.com/" target="_blank" class="group block p-5 bg-white rounded-xl border border-slate-200 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-1 transition-all">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-indigo-700 flex items-center"><span class="mr-2">🧩</span> MBTI 認知功能測試</span>
+                                <span class="text-xs bg-indigo-50 text-indigo-600 px-2 py-1 rounded-full font-bold">推薦</span>
+                            </div>
+                            <div class="text-sm text-slate-400 mb-2">totypes.com</div>
+                            <p class="text-xs text-slate-500 group-hover:text-indigo-600 transition-colors">備註：不好意思都是簡體版，但我本身自測，這個認知功能分析比較準確。</p>
+                        </a>
+
+                        <a href="https://enneagram.cc/jxcs.php" target="_blank" class="group block p-5 bg-white rounded-xl border border-slate-200 hover:border-amber-400 hover:shadow-lg hover:-translate-y-1 transition-all">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="font-bold text-amber-700 flex items-center"><span class="mr-2">🌟</span> 9 型人格測試</span>
+                                <span class="text-xs bg-amber-50 text-amber-600 px-2 py-1 rounded-full font-bold">推薦</span>
+                            </div>
+                            <div class="text-sm text-slate-400 mb-2">enneagram.cc</div>
+                            <p class="text-xs text-slate-500 group-hover:text-amber-600 transition-colors">備註：不好意思都是簡體版，但測驗結果較為深入準確。</p>
+                        </a>
+                    </div>
+
+                    <!-- Instinct Variant Quick Test -->
+                    <div class="mt-8 pt-6 border-t border-slate-100">
+                        <h3 class="text-lg font-bold text-slate-700 mb-4 flex items-center">
+                            🧬 本能副型 (Instinctual Variants) 快速自我檢測
+                            <span class="hidden md:inline-flex ml-3 text-xs font-normal text-slate-500 bg-slate-100 px-3 py-1 rounded-full">哪一種是你最深層的焦慮來源？</span>
+                        </h3>
+                        
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <!-- SP -->
+                            <div class="relative group bg-emerald-50/50 p-5 rounded-2xl border border-emerald-100 hover:bg-emerald-50 hover:border-emerald-300 hover:shadow-md transition-all">
+                                <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 text-4xl">🏰</div>
+                                <div class="font-black text-emerald-800 text-center text-2xl mb-1">SP</div>
+                                <div class="text-[0.65rem] text-center text-emerald-600 font-bold mb-4 uppercase tracking-widest border-b border-emerald-200 pb-2">Self-Preservation 自保</div>
+                                <ul class="text-sm text-emerald-900 space-y-2 list-none text-center">
+                                    <li><span class="font-bold">生存資源</span><br><span class="text-xs opacity-75">錢、食物、健康、舒適</span></li>
+                                    <li class="pt-2"><span class="text-xs bg-white px-2 py-1 rounded border border-emerald-200">擔憂：我有足夠資源活下去嗎？</span></li>
+                                </ul>
+                            </div>
+
+                            <!-- SX -->
+                            <div class="relative group bg-rose-50/50 p-5 rounded-2xl border border-rose-100 hover:bg-rose-50 hover:border-rose-300 hover:shadow-md transition-all">
+                                <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 text-4xl">🔥</div>
+                                <div class="font-black text-rose-800 text-center text-2xl mb-1">SX</div>
+                                <div class="text-[0.65rem] text-center text-rose-600 font-bold mb-4 uppercase tracking-widest border-b border-rose-200 pb-2">Sexual / One-to-One 一對一</div>
+                                <ul class="text-sm text-rose-900 space-y-2 list-none text-center">
+                                    <li><span class="font-bold">強烈連結</span><br><span class="text-xs opacity-75">吸引力、化學反應、融合</span></li>
+                                    <li class="pt-2"><span class="text-xs bg-white px-2 py-1 rounded border border-rose-200">擔憂：我們之間有火花嗎？</span></li>
+                                </ul>
+                            </div>
+
+                            <!-- SO -->
+                            <div class="relative group bg-blue-50/50 p-5 rounded-2xl border border-blue-100 hover:bg-blue-50 hover:border-blue-300 hover:shadow-md transition-all">
+                                <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 text-4xl">🌐</div>
+                                <div class="font-black text-blue-800 text-center text-2xl mb-1">SO</div>
+                                <div class="text-[0.65rem] text-center text-blue-600 font-bold mb-4 uppercase tracking-widest border-b border-blue-200 pb-2">Social 社交</div>
+                                <ul class="text-sm text-blue-900 space-y-2 list-none text-center">
+                                    <li><span class="font-bold">群體關係</span><br><span class="text-xs opacity-75">歸屬感、地位、貢獻</span></li>
+                                    <li class="pt-2"><span class="text-xs bg-white px-2 py-1 rounded border border-blue-200">擔憂：大家怎麼看我？</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- 區塊 1：動態單/雙人專屬雷達圖生成器 -->
         <section id="radar-section" class="scroll-mt-24 transition-all duration-500">
             <div class="bg-white rounded-3xl shadow-xl border border-slate-200 p-6 md:p-8 relative overflow-hidden">
