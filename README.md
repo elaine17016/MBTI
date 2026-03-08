@@ -7,7 +7,10 @@
 ## 🌟 特色 (Features)
 
 1.  **動態雷達圖 (Dynamic Radar Chart)**：
-    *   可輸入 Sakinorva 測試數據。
+    *   可輸入 MBTI 與九型測試結果。
+    *   MBTI 測試：<https://totypes.com/>
+    *   9 型人格測試：<https://enneagram.cc/jxcs.php>
+    *   備註：不好意思都是簡體版，但我本身自測，這兩個會比較準確。
     *   支援 **雙人比對模式** (伴侶/朋友)。
     *   支援 **16 型人格常模疊加**，一鍵看清你與標準類型的差異。
     *   自動保存數據至瀏覽器 (LocalStorage)，重新整理不丟失。
