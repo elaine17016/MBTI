@@ -3,7 +3,7 @@
 這是一個基於 **榮格八維 (Jungian Cognitive Functions)**、**九型人格 (Enneagram)** 與 **本能副型 (Instinctual Variants)** 的深度人格分析工具。
 
 目前版本：**Ultimate Edition**
-
+網頁網址(link):https://elaine17016.github.io/MBTI/
 ## 🌟 特色 (Features)
 
 1.  **動態雷達圖 (Dynamic Radar Chart)**：
